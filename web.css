@@ -1,6 +1,6 @@
 /* Estilos para el cuerpo de la página */
 body {
-    background-color: #000000; /* Fondo negro */
+    background-color: #000000 !important; /* Fondo negro */
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
@@ -9,9 +9,9 @@ body {
 
 /* Estilos para el título */
 h1 {
-    color: #ffffff; /* Letras blancas */
+    color: #ffffff !important; /* Letras blancas */
     /* Cambia el color de fondo a negro */
-    background-color: #000000;
+    background-color: #000000 !important;
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
