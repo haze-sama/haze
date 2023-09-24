@@ -20,12 +20,12 @@ h1 {
 
 /* Estilos para la imagen personalizada */
 .custom-image {
-    margin-top: 20px;
+    margin-top: 60px;
     font-family: Helvetica, sans-serif;
 }
 
 .custom-image img {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
 }
 
