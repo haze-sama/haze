@@ -1,32 +1,40 @@
- /* Estilos para el cuerpo de la página */
-        body {
-            background-color: #000000;
-            font-family: 'Rubik Mono One', sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            position: relative; /* Agregamos posición relativa para el footer */
-        }
-        /* Estilos para el título */
-        h1 {
-            color: #ffffff;
-            background-color: #000000;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
-        }
-        /* Estilos para el reproductor de video de YouTube */
-        iframe {
-            width: 560px;
-            height: 315px;
-            margin: 0 auto; /* Centramos el video horizontalmente */
-            display: block;
-        }
-        /* Estilos para el div de la imagen */
-        .custom-image {
-            margin-top: 30px;
-        }
-        /* Estilos para el div del eslogan */
-        .slogan {
-            color: gold; /* Cambiamos el color del enlace */
+/* Estilos para el cuerpo de la página */
+body {
+    background-color: #000000;
+    font-family: 'Rubik Mono One', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: ending; /* Agregamos posición relativa para el footer */
+}
+/* Estilos para el título (H1) */
+ul class="list" {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px; /* Reduce el espacio de relleno superior e inferior */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    font-size: 14px; /* Cambiamos el tamaño de fuente a 24px */
+}
+/* Estilos para el título (H1) */
+h1 {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px; /* Reduce el espacio de relleno superior e inferior */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    font-size: 24px; /* Cambiamos el tamaño de fuente a 24px */
+}
+/* Estilos para el reproductor de video de YouTube (iframe) */
+iframe {
+    width: 560px;
+    height: 315px;
+    margin: 0 auto; /* Centramos el video horizontalmente */
+    display: block;
+}
+/* Estilos para el div de la imagen */
+.custom-image {
+    margin-top: 30px
+}
