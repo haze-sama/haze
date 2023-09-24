@@ -10,8 +10,8 @@ body {
 /* Estilos para el título */
 h1 {
     color: #ffffff; /* Letras blancas */
-    /* Elimina o cambia el color de fondo a tu gusto */
-    /* background-color: #000000; */ /* Puedes eliminar esta línea si no deseas fondo */
+    /* Cambia el color de fondo a negro */
+    background-color: #000000;
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
