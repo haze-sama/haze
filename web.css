@@ -7,6 +7,7 @@ body {
     padding: 0;
     position: relative;
     color: white; /* Color del texto predeterminado */
+    margin-bottom: 60px; /* Agregamos espacio entre cada elemento de la lista */
 }
 
 /* Estilos para el título (H1) */
