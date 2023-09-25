@@ -32,11 +32,11 @@ iframe {
 /* Estilos para el div de la imagen */
 .custom-image {
     margin-top: 30px;
-    max-width: 315px;
-    height: 560px;
-    position: center;
+    max-width: 560px; /* Establecemos el ancho máximo igual al video */
+    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+    margin-left: auto;
+    margin-right: auto; /* Esto centra la imagen horizontalmente */
 }
-
 
 /* Estilos para el bloque de la marca y enlace para contactar */
 .brand {
@@ -56,15 +56,6 @@ iframe {
 .list {
     font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
     max-width: 560px;
-    margin: 0 auto;
-    font-size: 14px;
-    text-align: left;
-    padding-left: 10px; /* Añadimos un relleno a la izquierda para los puntos */
-    color: #ffffff;
-/* Estilos para la lista de servicios (ul) */
-.list {
-    font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
-    max-width: 560px;
     height: auto;
     margin: 0 auto;
     font-size: 14px;
@@ -72,7 +63,6 @@ iframe {
     padding-left: 10px; /* Añadimos un relleno a la izquierda para los puntos */
     color: #ffffff;
     padding-bottom: 20px; /* Agregamos espacio en la parte inferior para mostrar todas las líneas */
-}
 }
 
 /* Estilos para los elementos de la lista (li) */
