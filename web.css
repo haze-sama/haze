@@ -9,6 +9,37 @@ body {
     color: white; /* Color del texto predeterminado */
     margin-bottom: 60px; /* Agregamos espacio entre cada elemento de la lista */
 }
+/* Establecemos una altura mínima para el body y el html para que el footer siempre esté en la parte inferior */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales para el cuerpo de la página */
+body {
+    display: flex; /* Usamos flexbox para el posicionamiento */
+    flex-direction: column; /* Apilamos los elementos verticalmente */
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    margin-bottom: 60px;
+}
+
+/* Estilos para el contenido principal */
+.content {
+    flex-grow: 1; /* Hace que el contenido principal crezca para ocupar el espacio disponible */
+    padding-bottom: 60px; /* Espacio para el footer */
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #000000;
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+}
 
 /* Estilos para el título (H1) */
 h1 {
