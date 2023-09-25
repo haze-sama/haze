@@ -94,7 +94,8 @@ iframe {
 
 /* Estilos para el pie de página */
 footer {
-    font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
+    font-family: Arial, sans-serif;
+    position: sticky; /* Cambiamos "absolute" a "sticky" */
     bottom: 0;
     width: 100%;
     background-color: #000000;
