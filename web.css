@@ -18,7 +18,7 @@ h1 {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     margin-top: 30px;
-    font-size: 16px;
+    font-size: 24px; /* Cambiamos el tamaño a 24px */
 }
 
 /* Estilos para el reproductor de video de YouTube (iframe) */
@@ -33,9 +33,7 @@ iframe {
 .custom-image {
     margin-top: 30px;
     max-width: 560px; /* Establecemos el ancho máximo */
-    margin-left: auto;
-    margin-right: auto; /* Esto centra la imagen horizontalmente */
-    position: center;
+    margin: 0 auto; /* Centramos horizontalmente */
 }
 
 /* Estilos para el bloque de la marca y enlace para contactar */
@@ -64,6 +62,11 @@ iframe {
 }
 
 /* Estilos para los elementos de la lista (li) */
+.list ul {
+    list-style-position: inside; /* Posicionamos los bullets dentro del espacio del ul */
+    padding-left: 0; /* Quitamos el relleno predeterminado del ul */
+}
+
 .list li {
     margin-bottom: 10px; /* Agregamos espacio entre cada elemento de la lista */
 }
