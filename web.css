@@ -32,6 +32,8 @@ iframe {
 /* Estilos para el div de la imagen */
 .custom-image {
     margin-top: 30px;
+    height: 560px;
+    width: 315px;
 }
 
 /* Estilos para el bloque de la marca y enlace para contactar */
