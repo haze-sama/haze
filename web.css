@@ -28,6 +28,7 @@ iframe {
     height: 315px;
     margin: 0 auto;
     display: block;
+    margin-bottom: 30px; /* Agregamos espacio entre cada elemento de la lista */
 }
 
 /* Estilos para el div de la imagen */
