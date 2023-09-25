@@ -76,6 +76,7 @@ iframe {
     padding-left: 10px; /* Añadimos un relleno a la izquierda para los puntos */
     color: #ffffff;
     padding-bottom: 20px; /* Agregamos espacio en la parte inferior para mostrar todas las líneas */
+    margin-bottom: 10px; /* Agregamos espacio entre cada elemento de la lista */
 }
 
 /* Estilos para los elementos de la lista (li) */
