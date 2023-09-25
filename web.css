@@ -1,7 +1,7 @@
 /* Estilos generales para el cuerpo de la página */
 body {
     background-color: #000000;
-    font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
+    font-family: Arial, sans-serif; /* Fuente predeterminada */
     text-align: center;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
 
 /* Estilos para el título (H1) */
 h1 {
-    font-family: 'Rubik Mono One', sans-serif; /* Aplicamos la fuente 'Rubik Mono One' solo al H1 */
+    font-family: Arial, sans-serif; 
     color: gold;
     background-color: #000000;
     padding: 10px;
