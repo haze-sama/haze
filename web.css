@@ -42,23 +42,26 @@ iframe {
 }
 
 /* Estilos para el div del eslogan */
-.slogan {
+.slogan {    
+    font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
+    font-weight: regular;
     color: #ffffff;
 }
 
 /* Estilos para la lista de servicios (ul) */
 .list {
+    font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
     max-width: 560px;
     margin: 0 auto;
     font-size: 14px;
     text-align: left;
-    list-style: disc; /* Cambiamos el tipo de lista a puntos */
     padding-left: 10px; /* Añadimos un relleno a la izquierda para los puntos */
     color: #ffffff;
 }
 
 /* Estilos para el pie de página */
 footer {
+    font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
     position: absolute;
     bottom: 0;
     width: 100%;
