@@ -34,11 +34,10 @@ iframe {
 /* Estilos para el div de la imagen */
 .custom-image {
     margin-top: 30px;
-    max-width: 315px; /* Establecemos un ancho máximo de 100px para hacer que la imagen sea pequeña */
+    max-width: 100%; /* Establecemos un ancho máximo de 100% para que la imagen se ajuste al contenedor */
     height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
-    margin: 0; /* Centramos la imagen horizontalmente */
-    img-align: center; /* Centramos el contenido dentro del div */
-    display: block; /* Hacemos que el div sea un bloque para centrarlo verticalmente */
+    margin: 0 auto; /* Centramos la imagen horizontalmente */
+    text-align: center; /* Centramos el contenido dentro del div */
 }
 
 /* Estilos para el contenedor de la imagen */
@@ -96,7 +95,6 @@ iframe {
 /* Estilos para el pie de página */
 footer {
     font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
-    position: absolute;
     bottom: 0;
     width: 100%;
     background-color: #000000;
