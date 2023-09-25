@@ -35,6 +35,7 @@ iframe {
     max-width: 560px; /* Establecemos el ancho máximo */
     margin-left: auto;
     margin-right: auto; /* Esto centra la imagen horizontalmente */
+    position: center;
 }
 
 /* Estilos para el bloque de la marca y enlace para contactar */
