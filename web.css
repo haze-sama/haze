@@ -38,8 +38,7 @@ iframe {
     height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
     margin: 0 auto; /* Centramos la imagen horizontalmente */
     display: block; /* Hacemos que la imagen sea un bloque para centrarla verticalmente */
-    max-height: 315px; /* Limitamos la altura máxima a 315px */
-    object-fit: cover;
+    text-align: center; /* Centramos el contenido del div horizontalmente */
 }
 
 /* Estilos para el contenedor de la imagen */
