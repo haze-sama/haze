@@ -35,8 +35,8 @@ iframe {
     margin-top: 30px;
     max-width: 100%; /* Establecemos el ancho máximo igual al video */
     height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
-    padding-right: 200px;
-    padding-left: 200px;
+    padding-right: 600px;
+    padding-left: 600px;
 }
 
 /* Estilos para el contenedor de la imagen */
