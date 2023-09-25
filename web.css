@@ -32,10 +32,8 @@ iframe {
 /* Estilos para el div de la imagen */
 .custom-image {
     margin-top: 30px;
-    max-width: 560px; /* Establecemos el ancho máximo */
-    height: auto; /* Hacemos que la imagen ocupe todo el ancho disponible */
-    margin-left: auto;
-    margin-right: auto; /* Esto centra la imagen horizontalmente */
+    max-width: 315px;
+    height: 560px;
     position: center;
 }
 
