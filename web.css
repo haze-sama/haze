@@ -43,7 +43,7 @@ iframe {
 
 /* Estilos para el div del eslogan */
 .slogan {
-    color: grey;
+    color: #ffffff;
 }
 
 /* Estilos para la lista de servicios (ul) */
@@ -54,6 +54,7 @@ iframe {
     text-align: left;
     list-style: disc; /* Cambiamos el tipo de lista a puntos */
     padding-left: 10px; /* Añadimos un relleno a la izquierda para los puntos */
+    color: #ffffff;
 }
 
 /* Estilos para el pie de página */
@@ -64,4 +65,5 @@ footer {
     background-color: #000000;
     padding: 10px;
     text-align: center;
+    color: #ffffff;
 }
