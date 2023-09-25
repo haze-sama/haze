@@ -33,7 +33,7 @@ iframe {
 /* Estilos para el div de la imagen */
 .custom-image {
     margin-top: 30px;
-    max-width: 315px; /* Establecemos un ancho máximo de 100px para hacer que la imagen sea pequeña */
+    max-width: 100px; /* Establecemos un ancho máximo de 100px para hacer que la imagen sea pequeña */
     height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
     margin: 0 auto; /* Centramos la imagen horizontalmente */
     display: block; /* Hacemos que la imagen sea un bloque para centrarla verticalmente */
