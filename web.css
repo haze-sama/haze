@@ -32,10 +32,20 @@ iframe {
 /* Estilos para el div de la imagen */
 .custom-image {
     margin-top: 30px;
-    max-width: 560px; /* Establecemos el ancho máximo igual al video */
+    max-width: 80%; /* Establecemos el ancho máximo igual al video */
     height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
-    margin-left: auto;
-    margin-right: auto; /* Esto centra la imagen horizontalmente */
+}
+
+/* Estilos para el contenedor de la imagen */
+.image-container {
+    max-width: 560px; /* Establecemos el ancho máximo */
+    margin: 0 auto; /* Centramos el contenedor horizontalmente */
+}
+
+/* Estilos para la imagen dentro del contenedor */
+.image-container img {
+    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
 }
 
 /* Estilos para el bloque de la marca y enlace para contactar */
