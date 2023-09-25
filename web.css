@@ -51,7 +51,7 @@ iframe {
 .image-container img {
     width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
     height: 100%; /* La altura ocupará el 100% del contenedor */
-    object-fit: cover; /* Ajusta la imagen para llenar el contenedor sin distorsionarla */
+    object-fit: contain; /* Cambiamos esto a "contain" para asegurar que la imagen se ajuste dentro del contenedor sin recortarla */
 }
 
 /* Estilos para el bloque de la marca y enlace para contactar */
