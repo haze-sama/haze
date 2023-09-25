@@ -33,10 +33,10 @@ iframe {
 /* Estilos para el div de la imagen */
 .custom-image {
     margin-top: 30px;
-    max-width: 100%; /* Establecemos el ancho máximo igual al video */
+    max-width: 315px; /* Establecemos un ancho máximo de 100px para hacer que la imagen sea pequeña */
     height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
-    padding-right: 900;
-    padding-left: 900;
+    margin: 0 auto; /* Centramos la imagen horizontalmente */
+    display: block; /* Hacemos que la imagen sea un bloque para centrarla verticalmente */
 }
 
 /* Estilos para el contenedor de la imagen */
