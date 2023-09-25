@@ -62,6 +62,11 @@ iframe {
     color: #ffffff;
 }
 
+/* Estilos para los elementos de la lista (li) */
+.list li {
+    margin-bottom: 10px; /* Agregamos espacio entre cada elemento de la lista */
+}
+
 /* Estilos para el pie de página */
 footer {
     font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
