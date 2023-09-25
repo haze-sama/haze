@@ -32,8 +32,9 @@ iframe {
 /* Estilos para el div de la imagen */
 .custom-image {
     margin-top: 30px;
-    height: 560px;
-    width: 315px;
+    max-width: 560px; /* Establecemos el ancho máximo */
+    margin-left: auto;
+    margin-right: auto; /* Esto centra la imagen horizontalmente */
 }
 
 /* Estilos para el bloque de la marca y enlace para contactar */
