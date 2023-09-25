@@ -35,8 +35,8 @@ iframe {
     margin-top: 30px;
     max-width: 100%; /* Establecemos el ancho máximo igual al video */
     height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
-    padding-right: 400;
-    padding-left: 400;
+    padding-right: 900;
+    padding-left: 900;
 }
 
 /* Estilos para el contenedor de la imagen */
@@ -44,6 +44,7 @@ iframe {
     max-width: 560px; /* Establecemos el ancho máximo */
     margin: 0 auto; /* Centramos el contenedor horizontalmente */
     max-height: 315px; /* Limitamos la altura máxima a 315px */
+    object-fit: cover;
 }
 
 /* Estilos para la imagen dentro del contenedor */
@@ -57,7 +58,7 @@ iframe {
 .brand {
     font-family: 'Rubik Mono One', sans-serif; /* Aplicamos la fuente 'Rubik Mono One' solo al brand */
     color: gold;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 /* Estilos para el div del eslogan */
