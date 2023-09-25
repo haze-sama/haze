@@ -46,18 +46,20 @@ iframe {
     margin: 0 auto; /* Centramos horizontalmente */
 }
 
-/* Estilos para el contenedor de la imagen */
+/* Estilos para el contenedor de la imagen centrada */
 .image-container {
-    max-width: 560px; /* Establecemos el ancho máximo */
-    margin: 0 auto; /* Centramos el contenedor horizontalmente */
-    max-height: 315px; /* Limitamos la altura máxima a 315px */
-    object-fit: cover;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 315px; /* Altura máxima de 315px */
+    overflow: hidden; /* Recorta cualquier parte de la imagen que se desborde */
 }
 
-/* Estilos para la imagen dentro del contenedor */
-.image-container img {
-    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
-    height: 100%; /* La altura ocupará el 100% del contenedor */
+/* Estilos para la imagen centrada */
+.centered-image {
+    max-width: 100%; /* Ajusta el ancho máximo de la imagen al contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+    display: block; /* Asegura que la imagen se comporte como un bloque */
 }
 
 /* Estilos para el bloque de la marca y enlace para contactar */
