@@ -38,7 +38,12 @@ iframe {
     height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
     margin: 0 auto; /* Centramos la imagen horizontalmente */
     display: block; /* Hacemos que la imagen sea un bloque para centrarla verticalmente */
-    text-align: center; /* Centramos el contenido del div horizontalmente */
+}
+
+/* Estilos para la imagen centrada */
+.centered-image {
+    display: block;
+    margin: 0 auto; /* Centramos horizontalmente */
 }
 
 /* Estilos para el contenedor de la imagen */
