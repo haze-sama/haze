@@ -1,136 +1,63 @@
-/* Estilos generales para el cuerpo de la página */
-body {
-    background-color: #000000;
-    font-family: Arial, sans-serif; /* Fuente predeterminada */
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    color: white; /* Color del texto predeterminado */
-    margin-bottom: 60px; /* Agregamos espacio entre cada elemento de la lista */
-}
-/* Establecemos una altura mínima para el body y el html para que el footer siempre esté en la parte inferior */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Estilos generales para el cuerpo de la página */
-body {
-    display: flex; /* Usamos flexbox para el posicionamiento */
-    flex-direction: column; /* Apilamos los elementos verticalmente */
-    background-color: #000000;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    color: white;
-    margin-bottom: 60px;
-}
-
-/* Estilos para el contenido principal */
-.content {
-    flex-grow: 1; /* Hace que el contenido principal crezca para ocupar el espacio disponible */
-    padding-bottom: 60px; /* Espacio para el footer */
-}
-
-/* Estilos para el pie de página */
-footer {
-    background-color: #000000;
-    padding: 10px;
-    text-align: center;
-    color: #ffffff;
-}
-
-/* Estilos para el título (H1) */
-h1 {
-    font-family: Arial, sans-serif; 
-    color: gold;
-    background-color: #000000;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 30px;
-    font-size: 24px; /* Cambiamos el tamaño a 24px */
-}
-
-/* Estilos para el reproductor de video de YouTube (iframe) */
-iframe {
-    width: 560px;
-    height: 315px;
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 30px; /* Agregamos espacio entre cada elemento de la lista */
-}
-
-/* Estilos para el div de la imagen */
-.custom-image {
-    margin-top: 30px;
-    max-width: 100%; /* Establecemos un ancho máximo de 100% para que la imagen se ajuste al contenedor */
-    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
-    margin: 0 auto; /* Centramos la imagen horizontalmente */
-    text-align: center; /* Centramos el contenido dentro del div */
-}
-
-/* Estilos para el contenedor de la imagen */
-.image-container {
-    max-width: 560px; /* Establecemos el ancho máximo */
-    margin: 0 auto; /* Centramos el contenedor horizontalmente */
-    max-height: 315px; /* Limitamos la altura máxima a 315px */
-    object-fit: cover;
-}
-
-/* Estilos para la imagen dentro del contenedor */
-.image-container img {
-    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
-    height: 100%; /* La altura ocupará el 100% del contenedor */
-}
-
-/* Estilos para el bloque de la marca y enlace para contactar */
-.brand {
-    font-family: 'Rubik Mono One', sans-serif; /* Aplicamos la fuente 'Rubik Mono One' solo al brand */
-    color: gold;
-    font-weight: normal;
-}
-
-/* Estilos para el div del eslogan */
-.slogan {    
-    font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
-    font-weight: normal; /* En lugar de 'regular' */
-    color: #ffffff;
-}
-
-/* Estilos para la lista de servicios (ul) */
-.list {
-    font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
-    max-width: 560px;
-    height: auto;
-    margin: 0 auto;
-    font-size: 14px;
-    text-align: left;
-    padding-left: 10px; /* Añadimos un relleno a la izquierda para los puntos */
-    color: #ffffff;
-    padding-bottom: 20px; /* Agregamos espacio en la parte inferior para mostrar todas las líneas */
-    margin-bottom: 10px; /* Agregamos espacio entre cada elemento de la lista */
-}
-
-/* Estilos para los elementos de la lista (li) */
-.list ul {
-    list-style-position: inside; /* Posicionamos los bullets dentro del espacio del ul */
-    padding-left: 0; /* Quitamos el relleno predeterminado del ul */
-}
-
-.list li {
-    margin-bottom: 10px; /* Agregamos espacio entre cada elemento de la lista */
-}
-
-/* Estilos para el pie de página */
-footer {
-    font-family: Arial, sans-serif;
-    position: sticky; /* Cambiamos "absolute" a "sticky" */
-    bottom: 0;
-    width: 100%;
-    background-color: #000000;
-    padding: 30px;
-    text-align: center;
-    color: #ffffff;
-}
+// “The World is yours” me lo dijo Nas y le creí
+color: #FFF000;
+ font-size: 72px;
+ font-family: Open Sans;
+ font-weight: 800;
+ word-wrap: break-word
+---
+// H A Z E
+color: #FFF000;
+ font-size: 52px;
+ font-family: Rubik Mono One;
+ font-weight: 400;
+ text-decoration: underline;
+ word-wrap: break-word
+---
+// In Hustle We Trust
+color: white;
+ font-size: 52px;
+ font-family: Open Sans;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Diseño y Desarrollo de Webs/Apss
+color: white;
+ font-size: 43px;
+ font-family: Open Sans;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Contenido 2D especializado (banners, miniaturas, logos, iconos y más)
+color: white;
+ font-size: 43px;
+ font-family: Open Sans;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Copywriting especializado con optimización SEO
+color: white;
+ font-size: 43px;
+ font-family: Open Sans;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Servicios de edición, post-producción e incluso efectos audiovisuales
+color: white;
+ font-size: 44px;
+ font-family: Open Sans;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// Planeo exteder mis servicios a otras áreas segun tus necesidades
+color: white;
+ font-size: 48px;
+ font-family: Open Sans;
+ font-weight: 400;
+ word-wrap: break-word
+---
+// © By Victor Wendehake
+color: white;
+ font-size: 52px;
+ font-family: Open Sans;
+ font-weight: 400;
+ word-wrap: break-word
