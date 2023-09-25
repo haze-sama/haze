@@ -3,8 +3,8 @@ body {
     background-color: #000000;
     font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
     text-align: center;
-    margin: 40;
-    padding: 20;
+    margin: 0;
+    padding: 0;
     position: relative;
     color: white; /* Color del texto predeterminado */
 }
@@ -44,7 +44,7 @@ iframe {
 /* Estilos para el div del eslogan */
 .slogan {    
     font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
-    font-weight: regular;
+    font-weight: normal; /* En lugar de 'regular' */
     color: #ffffff;
 }
 
