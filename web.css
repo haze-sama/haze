@@ -1,78 +1,84 @@
-/* Reset básico */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilo general */
 body {
     background: #1A1A1A;
     color: #FFFFFF;
-    font-family: 'Orbitron', sans-serif;
-    overflow-x: hidden;
+    font-family: 'Rubik Mono One', sans-serif;
+    line-height: 1.6;
 }
 
-/* Barra de navegación fija */
+/* Navbar fija con desplegable */
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     background: #000000;
-    padding: 15px 20px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    border-bottom: 2px solid #00FF7F;
+    border-bottom: 2px solid gold;
 }
 
 .logo {
     color: gold;
-    font-family: 'Rubik Mono One', sans-serif;
-    font-size: 24px;
+    font-size: 48px;
+    letter-spacing: 5px;
 }
 
-nav ul {
+.menu-toggle {
+    display: none;
+    color: gold;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: flex;
+}
+
+.dropdown ul {
     list-style: none;
     display: flex;
 }
 
-nav ul li {
+.dropdown ul li {
     margin: 0 15px;
 }
 
-nav ul li a {
+.dropdown ul li a {
     color: #FFFFFF;
     text-decoration: none;
-    font-weight: 700;
+    font-size: 16px;
     transition: color 0.3s;
 }
 
-nav ul li a:hover, nav ul li a.active {
-    color: #00FF7F;
-}
-
-/* Contenedor principal */
-#content {
-    margin-top: 80px; /* Espacio para la navbar */
-    min-height: calc(100vh - 120px); /* Ajuste para footer */
+.dropdown ul li a:hover {
+    color: gold;
 }
 
 /* Secciones */
 .section {
-    display: none;
-    padding: 40px;
+    padding: 60px 20px;
     text-align: center;
+    min-height: 100vh;
 }
 
-.section.active {
-    display: block;
+h1 {
+    font-size: 36px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
 }
 
-h1, h2 {
-    font-family: 'Rubik Mono One', sans-serif;
-    color: #00FF7F;
+h2 {
+    font-size: 28px;
+    color: gold;
     margin-bottom: 20px;
 }
 
@@ -84,59 +90,109 @@ iframe, .custom-image img {
 }
 
 .slogan {
-    color: gold;
-    font-size: 18px;
+    color: yellow;
+    font-size: 24px;
     margin: 20px 0;
 }
 
 ul {
-    list-style: square;
-    margin: 20px auto;
+    list-style: none;
     max-width: 600px;
-    text-align: left;
+    margin: 20px auto;
+    text-align: center;
 }
 
 li {
     margin: 10px 0;
+    font-size: 18px;
+}
+
+/* Formulario */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    background: #2D2D2D;
+    border: 1px solid gold;
     color: #FFFFFF;
+    font-family: sans-serif;
+}
+
+button {
+    padding: 10px;
+    background: gold;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
+button:hover {
+    background: yellow;
+}
+
+/* Portafolio */
+h3 {
+    color: gold;
+    margin: 20px 0;
 }
 
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
     max-width: 800px;
     margin: 20px auto;
 }
 
 .item {
     background: #2D2D2D;
-    padding: 20px;
-    border: 1px solid #0047AB;
-    color: #00FF7F;
+    padding: 15px;
+    border: 1px solid gold;
+    color: #FFFFFF;
+    width: 200px;
 }
 
 /* Footer fijo */
 footer {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
     background: #000000;
     padding: 10px;
     text-align: center;
-    border-top: 2px solid #00FF7F;
+    color: gold;
+    border-top: 2px solid gold;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
+    .menu-toggle {
+        display: block;
     }
-    nav ul {
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #000000;
+    }
+    .dropdown.active {
+        display: block;
+    }
+    .dropdown ul {
         flex-direction: column;
         text-align: center;
     }
-    nav ul li {
+    .dropdown ul li {
         margin: 10px 0;
     }
 }

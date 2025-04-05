@@ -1,21 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('.navbar a');
-    const sections = document.querySelectorAll('.section');
+    const toggle = document.querySelector('.menu-toggle');
+    const dropdown = document.querySelector('.dropdown');
+    const links = document.querySelectorAll('.dropdown a');
 
+    // Toggle menú desplegable
+    toggle.addEventListener('click', () => {
+        dropdown.classList.toggle('active');
+    });
+
+    // Navegación suave
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const sectionId = link.getAttribute('data-section');
-
-            // Cambiar sección activa
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-
-            // Cambiar link activo
-            links.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
+            const sectionId = link.getAttribute('href').substring(1);
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            dropdown.classList.remove('active'); // Cierra el menú en móviles
         });
     });
 });
