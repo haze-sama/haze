@@ -55,15 +55,24 @@ body {
     transition: color 0.3s;
 }
 
-.dropdown ul li a:hover {
+.dropdown ul li a:hover, .dropdown ul li a.active {
     color: gold;
 }
 
-/* Secciones */
+/* Contenedor de vistas */
+#content {
+    margin-top: 60px; /* Espacio para navbar */
+}
+
 .section {
+    display: none;
     padding: 60px 20px;
     text-align: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 120px); /* Ajuste para navbar y footer */
+}
+
+.section.active {
+    display: block;
 }
 
 h1 {
@@ -134,11 +143,6 @@ button:hover {
 }
 
 /* Portafolio */
-h3 {
-    color: gold;
-    margin: 20px 0;
-}
-
 .portfolio-grid {
     display: flex;
     justify-content: center;
@@ -168,13 +172,13 @@ footer {
     border-top: 2px solid gold;
 }
 
-/* Responsive - Menú hamburguesa en móviles */
+/* Responsive - Menú hamburguesa */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block; /* Visible en móviles */
+        display: block;
     }
     .dropdown {
-        display: none; /* Oculto por defecto */
+        display: none;
         position: absolute;
         top: 60px;
         left: 0;
@@ -183,7 +187,7 @@ footer {
         border-bottom: 2px solid gold;
     }
     .dropdown.active {
-        display: block; /* Se muestra al hacer clic */
+        display: block;
     }
     .dropdown ul {
         flex-direction: column;
