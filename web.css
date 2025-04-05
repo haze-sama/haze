@@ -9,12 +9,12 @@ body {
     background: #1A1A1A;
     color: #FFFFFF;
     font-family: 'Rubik Mono One', sans-serif;
-    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Navbar fija con hamburguesa */
 .navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     background: #000000;
@@ -36,7 +36,7 @@ body {
     color: gold;
     font-size: 24px;
     cursor: pointer;
-    display: none; /* Oculto en escritorio */
+    display: none;
 }
 
 .dropdown ul {
@@ -59,16 +59,17 @@ body {
     color: gold;
 }
 
-/* Contenedor de vistas */
+/* Contenedor principal */
 #content {
     margin-top: 60px; /* Espacio para navbar */
+    min-height: calc(100vh - 100px); /* Ajuste para footer */
 }
 
+/* Secciones */
 .section {
     display: none;
     padding: 60px 20px;
     text-align: center;
-    min-height: calc(100vh - 120px); /* Ajuste para navbar y footer */
 }
 
 .section.active {
@@ -162,7 +163,7 @@ button:hover {
 
 /* Footer fijo */
 footer {
-    position: sticky;
+    position: fixed;
     bottom: 0;
     width: 100%;
     background: #000000;
