@@ -18,25 +18,31 @@ body {
     top: 0;
     width: 100%;
     background: #000000;
-    padding: 10px 20px;
+    padding: 10px 0; /* Ajuste vertical, horizontal se maneja en hijos */
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
     border-bottom: 2px solid gold;
+    /* Evita compresión excesiva */
+    min-width: 390px;
 }
 
+/* Logo HAZE - Alineado a la izquierda con separación */
 .logo {
     color: gold;
     font-size: 48px;
-    letter-spacing: 5px;
+    letter-spacing: 10px; /* Separación entre letras */
+    margin-left: 20px; /* Separación del borde izquierdo */
 }
 
+/* Ícono de hamburguesa - Pegado a la derecha con separación */
 .menu-toggle {
     color: gold;
     font-size: 24px;
     cursor: pointer;
     display: none;
+    margin-right: 20px; /* Separación simétrica del borde derecho */
 }
 
 .dropdown ul {
@@ -199,5 +205,9 @@ footer {
     }
     .dropdown ul li a {
         font-size: 18px;
+    }
+    /* Mantener navbar sin compresión */
+    .navbar {
+        min-width: 390px;
     }
 }

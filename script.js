@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Cerrar menú en móviles
             dropdown.classList.remove('active');
 
-            // Desplazar al inicio del contenedor (opcional)
+            // Desplazar al inicio del contenedor
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     });
