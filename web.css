@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-/* Navbar fija con desplegable */
+/* Navbar fija con hamburguesa */
 .navbar {
     position: sticky;
     top: 0;
@@ -33,14 +33,10 @@ body {
 }
 
 .menu-toggle {
-    display: none;
     color: gold;
     font-size: 24px;
     cursor: pointer;
-}
-
-.dropdown {
-    display: flex;
+    display: none; /* Oculto en escritorio */
 }
 
 .dropdown ul {
@@ -172,27 +168,31 @@ footer {
     border-top: 2px solid gold;
 }
 
-/* Responsive */
+/* Responsive - Menú hamburguesa en móviles */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block;
+        display: block; /* Visible en móviles */
     }
     .dropdown {
-        display: none;
+        display: none; /* Oculto por defecto */
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
         background: #000000;
+        border-bottom: 2px solid gold;
     }
     .dropdown.active {
-        display: block;
+        display: block; /* Se muestra al hacer clic */
     }
     .dropdown ul {
         flex-direction: column;
         text-align: center;
     }
     .dropdown ul li {
-        margin: 10px 0;
+        margin: 15px 0;
+    }
+    .dropdown ul li a {
+        font-size: 18px;
     }
 }
