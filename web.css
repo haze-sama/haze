@@ -1,136 +1,142 @@
-/* Estilos generales para el cuerpo de la página */
-body {
-    background-color: #000000;
-    font-family: Arial, sans-serif; /* Fuente predeterminada */
-    text-align: center;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-    position: relative;
-    color: white; /* Color del texto predeterminado */
-    margin-bottom: 60px; /* Agregamos espacio entre cada elemento de la lista */
-}
-/* Establecemos una altura mínima para el body y el html para que el footer siempre esté en la parte inferior */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilos generales para el cuerpo de la página */
+/* Estilo general */
 body {
-    display: flex; /* Usamos flexbox para el posicionamiento */
-    flex-direction: column; /* Apilamos los elementos verticalmente */
-    background-color: #000000;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    color: white;
-    margin-bottom: 60px;
+    background: #1A1A1A;
+    color: #FFFFFF;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
 }
 
-/* Estilos para el contenido principal */
-.content {
-    flex-grow: 1; /* Hace que el contenido principal crezca para ocupar el espacio disponible */
-    padding-bottom: 60px; /* Espacio para el footer */
+/* Barra de navegación fija */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #000000;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 2px solid #00FF7F;
 }
 
-/* Estilos para el pie de página */
-footer {
-    background-color: #000000;
-    padding: 10px;
-    text-align: center;
-    color: #ffffff;
-}
-
-/* Estilos para el título (H1) */
-h1 {
-    font-family: Arial, sans-serif; 
+.logo {
     color: gold;
-    background-color: #000000;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 30px;
-    font-size: 24px; /* Cambiamos el tamaño a 24px */
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 24px;
 }
 
-/* Estilos para el reproductor de video de YouTube (iframe) */
-iframe {
-    width: 560px;
-    height: 315px;
-    margin: 0 auto;
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #00FF7F;
+}
+
+/* Contenedor principal */
+#content {
+    margin-top: 80px; /* Espacio para la navbar */
+    min-height: calc(100vh - 120px); /* Ajuste para footer */
+}
+
+/* Secciones */
+.section {
+    display: none;
+    padding: 40px;
+    text-align: center;
+}
+
+.section.active {
     display: block;
-    margin-bottom: 30px; /* Agregamos espacio entre cada elemento de la lista */
 }
 
-/* Estilos para el div de la imagen */
-.custom-image {
-    margin-top: 30px;
-    max-width: 100%; /* Establecemos un ancho máximo de 100% para que la imagen se ajuste al contenedor */
-    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
-    margin: 0 auto; /* Centramos la imagen horizontalmente */
-    text-align: center; /* Centramos el contenido dentro del div */
+h1, h2 {
+    font-family: 'Rubik Mono One', sans-serif;
+    color: #00FF7F;
+    margin-bottom: 20px;
 }
 
-/* Estilos para el contenedor de la imagen */
-.image-container {
-    max-width: 560px; /* Establecemos el ancho máximo */
-    margin: 0 auto; /* Centramos el contenedor horizontalmente */
-    max-height: 315px; /* Limitamos la altura máxima a 315px */
-    object-fit: cover;
+iframe, .custom-image img {
+    max-width: 100%;
+    border: 2px solid gold;
+    margin: 20px auto;
+    display: block;
 }
 
-/* Estilos para la imagen dentro del contenedor */
-.image-container img {
-    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
-    height: 100%; /* La altura ocupará el 100% del contenedor */
-}
-
-/* Estilos para el bloque de la marca y enlace para contactar */
-.brand {
-    font-family: 'Rubik Mono One', sans-serif; /* Aplicamos la fuente 'Rubik Mono One' solo al brand */
+.slogan {
     color: gold;
-    font-weight: normal;
+    font-size: 18px;
+    margin: 20px 0;
 }
 
-/* Estilos para el div del eslogan */
-.slogan {    
-    font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
-    font-weight: normal; /* En lugar de 'regular' */
-    color: #ffffff;
-}
-
-/* Estilos para la lista de servicios (ul) */
-.list {
-    font-family: Arial, sans-serif; /* Cambiamos la fuente predeterminada */
-    max-width: 560px;
-    height: auto;
-    margin: 0 auto;
-    font-size: 14px;
+ul {
+    list-style: square;
+    margin: 20px auto;
+    max-width: 600px;
     text-align: left;
-    padding-left: 10px; /* Añadimos un relleno a la izquierda para los puntos */
-    color: #ffffff;
-    padding-bottom: 20px; /* Agregamos espacio en la parte inferior para mostrar todas las líneas */
-    margin-bottom: 10px; /* Agregamos espacio entre cada elemento de la lista */
 }
 
-/* Estilos para los elementos de la lista (li) */
-.list ul {
-    list-style-position: inside; /* Posicionamos los bullets dentro del espacio del ul */
-    padding-left: 0; /* Quitamos el relleno predeterminado del ul */
+li {
+    margin: 10px 0;
+    color: #FFFFFF;
 }
 
-.list li {
-    margin-bottom: 10px; /* Agregamos espacio entre cada elemento de la lista */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 20px auto;
 }
 
-/* Estilos para el pie de página */
+.item {
+    background: #2D2D2D;
+    padding: 20px;
+    border: 1px solid #0047AB;
+    color: #00FF7F;
+}
+
+/* Footer fijo */
 footer {
-    font-family: Arial, sans-serif;
-    position: sticky; /* Cambiamos "absolute" a "sticky" */
+    position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #000000;
-    padding: 30px;
+    background: #000000;
+    padding: 10px;
     text-align: center;
-    color: #ffffff;
+    border-top: 2px solid #00FF7F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
 }

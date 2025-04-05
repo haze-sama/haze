@@ -1,44 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haze-Sama | Innovarts.tech</title>
     <link rel="stylesheet" type="text/css" href="web.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <h1>"The world is yours", me lo dijo Nas y le creí... </h1>
-    
-    <!-- Video de YouTube incrustado -->
-    <iframe width="280" height="158" src="https://www.youtube.com/embed/e5PnuIRnJW8?si=e1NcUA589IqkBrCb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    
-    <!-- Div para la imagen -->
-    <div class="custom-image">
-        <img src="https://raw.githubusercontent.com/haze-sama/haze/main/anon_gang.png" alt="In Gold We Trust">
-    </div>
-    
-    <!-- Enlace para contactar -->
-    <div class="brand">
-        <a href="https://www.facebook.com/WendeHaze4.0/" style="color: gold; text-decoration: underline; font-weight: bold;">H A Z E</a>
-    </div>
-    
-    <!-- Div para el eslogan -->
-    <div class="slogan">In Hustle We Trust</div>
-    
-    <!-- Lista de servicios -->
-    <div class="list">
-        <ul>
-            <li>Diseño y desarrollo de webs/apps</li>
-            <li>Contenido 2D especializado (banners, miniaturas, logos, iconos, y más)</li>
-            <li>Copywriting especializado con optimización SEO</li>
-            <li>Servicios de edición, post-producción e incluso efectos audiovisuales</li>
-        </ul>
-    </div>
-    <div class="bye">
-        <p>Planeo extender mis servicios a otras áreas según tus necesidades</p>
-    </div>
-    <!-- Pie de página -->
-    <footer>© By Victor Wendehake</footer>
+    <!-- Barra de navegación fija -->
+    <header class="navbar">
+        <div class="logo">H A Z E</div>
+        <nav>
+            <ul>
+                <li><a href="#" data-section="home" class="active">Home</a></li>
+                <li><a href="#" data-section="services">Servicios</a></li>
+                <li><a href="#" data-section="portfolio">Portafolio</a></li>
+                <li><a href="#" data-section="contact">Contacto</a></li>
+                <li><a href="#" data-section="about">Sobre mí</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenedor de vistas -->
+    <main id="content">
+        <!-- Vista Home -->
+        <section id="home" class="section active">
+            <h1>"The world is yours", me lo dijo Nas y le creí...</h1>
+            <iframe width="280" height="158" src="https://www.youtube.com/embed/e5PnuIRnJW8?si=e1NcUA589IqkBrCb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="custom-image">
+                <img src="https://raw.githubusercontent.com/haze-sama/haze/main/anon_gang.png" alt="In Gold We Trust">
+            </div>
+            <div class="slogan">In Hustle We Trust</div>
+        </section>
+
+        <!-- Vista Servicios -->
+        <section id="services" class="section">
+            <h2>Servicios</h2>
+            <ul>
+                <li>Diseño y desarrollo de webs/apps</li>
+                <li>Contenido 2D (banners, miniaturas, logos, iconos)</li>
+                <li>Copywriting con optimización SEO</li>
+                <li>Edición, post-producción y efectos audiovisuales</li>
+                <li>Expansión a medida según tus necesidades</li>
+            </ul>
+        </section>
+
+        <!-- Vista Portafolio -->
+        <section id="portfolio" class="section">
+            <h2>Portafolio</h2>
+            <div class="portfolio-grid">
+                <div class="item">Logo Minimalista (Ps/Ai)</div>
+                <div class="item">Landing Animada (VS Code/Ae)</div>
+                <div class="item">Video Promo (Pr/Ae)</div>
+            </div>
+        </section>
+
+        <!-- Vista Contacto -->
+        <section id="contact" class="section">
+            <h2>Contacto</h2>
+            <p>Conéctate conmigo:</p>
+            <a href="https://www.facebook.com/WendeHaze4.0/" target="_blank">Facebook: H A Z E</a>
+            <p>Email: victor.wendehake@gmail.com</p>
+        </section>
+
+        <!-- Vista Sobre mí -->
+        <section id="about" class="section">
+            <h2>Sobre mí</h2>
+            <p>Soy Victor Wendehake, un INTP-Géminis creativo, analítico y resiliente. Inspirado por Tesla y la estética oriental, construyo Innovarts.tech para crear marcas y soluciones digitales.</p>
+        </section>
+    </main>
+
+    <!-- Pie de página fijo -->
+    <footer>© 2025 By Victor Wendehake</footer>
+
+    <!-- JavaScript para navegación -->
+    <script src="script.js"></script>
 </body>
 </html>
