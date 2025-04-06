@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navbar fija con hamburguesa - Espaciado general */
+/* Navbar fija con hamburguesa */
 .navbar {
     position: fixed;
     top: 0;
@@ -178,29 +178,29 @@ footer {
 
 /* Estilo específico para #about */
 #about {
-    padding: 100px 60px; /* Padding más amplio para destacar la sección */
+    padding: 100px 60px;
 }
 
 #about h2 {
-    font-size: 32px; /* Título un poco más grande */
-    margin-bottom: 40px; /* Más espacio bajo el título */
-    text-transform: uppercase; /* Para un toque misterioso y profesional */
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
 }
 
 .about-content {
-    max-width: 800px; /* Ancho máximo para mejor legibilidad */
-    margin: 0 auto; /* Centrado */
-    padding: 30px; /* Padding interno para el contenido */
-    background: rgba(0, 0, 0, 0.5); /* Fondo sutil para profundidad */
-    border: 1px solid gold; /* Borde dorado para consistencia */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid gold;
 }
 
 .about-content p {
-    font-size: 16px; /* Tamaño legible pero no abrumador */
-    line-height: 1.8; /* Más espacio entre líneas */
-    margin-bottom: 25px; /* Separación entre párrafos */
-    color: #E0E0E0; /* Blanco grisáceo para contraste sutil */
-    text-align: justify; /* Justificado para un look profesional */
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #E0E0E0;
+    text-align: justify;
 }
 
 /* Responsive - Menú hamburguesa */
@@ -234,11 +234,10 @@ footer {
     .navbar {
         min-width: 390px;
     }
-    /* Ajuste para #about en móviles */
     #about {
-        padding: 60px 20px; /* Reducido pero aún espacioso */
+        padding: 60px 20px;
     }
     .about-content {
-        padding: 20px; /* Padding reducido en móviles */
+        padding: 20px;
     }
 }
