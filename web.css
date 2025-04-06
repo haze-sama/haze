@@ -12,46 +12,44 @@ body {
     overflow-x: hidden;
 }
 
-/* Navbar fija con hamburguesa */
+/* Navbar fija con hamburguesa - Espaciado general */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     background: #000000;
-    padding: 10px 0; /* Ajuste vertical, horizontal se maneja en hijos */
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
     border-bottom: 2px solid gold;
-    /* Evita compresión excesiva */
     min-width: 390px;
 }
 
-/* Logo HAZE - Alineado a la izquierda con separación */
 .logo {
     color: gold;
     font-size: 48px;
-    letter-spacing: 10px; /* Separación entre letras */
-    margin-left: 20px; /* Separación del borde izquierdo */
+    letter-spacing: 10px;
+    margin-left: 30px;
 }
 
-/* Ícono de hamburguesa - Pegado a la derecha con separación */
 .menu-toggle {
     color: gold;
     font-size: 24px;
     cursor: pointer;
     display: none;
-    margin-right: 20px; /* Separación simétrica del borde derecho */
+    margin-right: 30px;
 }
 
 .dropdown ul {
     list-style: none;
     display: flex;
+    padding: 0 20px;
 }
 
 .dropdown ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 .dropdown ul li a {
@@ -67,14 +65,14 @@ body {
 
 /* Contenedor principal */
 #content {
-    margin-top: 60px; /* Espacio para navbar */
-    min-height: calc(100vh - 100px); /* Ajuste para footer */
+    margin-top: 80px;
+    min-height: calc(100vh - 120px);
 }
 
-/* Secciones */
+/* Secciones - Estilo base */
 .section {
     display: none;
-    padding: 60px 20px;
+    padding: 80px 40px;
     text-align: center;
 }
 
@@ -85,51 +83,52 @@ body {
 h1 {
     font-size: 36px;
     color: #FFFFFF;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 h2 {
     font-size: 28px;
     color: gold;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 iframe, .custom-image img {
     max-width: 100%;
     border: 2px solid gold;
-    margin: 20px auto;
+    margin: 30px auto;
     display: block;
 }
 
 .slogan {
     color: yellow;
     font-size: 24px;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 ul {
     list-style: none;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 30px auto;
     text-align: center;
+    padding: 0 20px;
 }
 
 li {
-    margin: 10px 0;
+    margin: 15px 0;
     font-size: 18px;
 }
 
-/* Formulario */
 form {
     max-width: 500px;
-    margin: 20px auto;
+    margin: 30px auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    padding: 20px;
 }
 
 input, textarea {
-    padding: 10px;
+    padding: 12px;
     background: #2D2D2D;
     border: 1px solid gold;
     color: #FFFFFF;
@@ -137,7 +136,7 @@ input, textarea {
 }
 
 button {
-    padding: 10px;
+    padding: 12px;
     background: gold;
     color: #000000;
     border: none;
@@ -149,34 +148,59 @@ button:hover {
     background: yellow;
 }
 
-/* Portafolio */
 .portfolio-grid {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
     max-width: 800px;
-    margin: 20px auto;
+    margin: 30px auto;
 }
 
 .item {
     background: #2D2D2D;
-    padding: 15px;
+    padding: 20px;
     border: 1px solid gold;
     color: #FFFFFF;
     width: 200px;
 }
 
-/* Footer fijo */
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     background: #000000;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     color: gold;
     border-top: 2px solid gold;
+}
+
+/* Estilo específico para #about */
+#about {
+    padding: 100px 60px; /* Padding más amplio para destacar la sección */
+}
+
+#about h2 {
+    font-size: 32px; /* Título un poco más grande */
+    margin-bottom: 40px; /* Más espacio bajo el título */
+    text-transform: uppercase; /* Para un toque misterioso y profesional */
+}
+
+.about-content {
+    max-width: 800px; /* Ancho máximo para mejor legibilidad */
+    margin: 0 auto; /* Centrado */
+    padding: 30px; /* Padding interno para el contenido */
+    background: rgba(0, 0, 0, 0.5); /* Fondo sutil para profundidad */
+    border: 1px solid gold; /* Borde dorado para consistencia */
+}
+
+.about-content p {
+    font-size: 16px; /* Tamaño legible pero no abrumador */
+    line-height: 1.8; /* Más espacio entre líneas */
+    margin-bottom: 25px; /* Separación entre párrafos */
+    color: #E0E0E0; /* Blanco grisáceo para contraste sutil */
+    text-align: justify; /* Justificado para un look profesional */
 }
 
 /* Responsive - Menú hamburguesa */
@@ -187,7 +211,7 @@ footer {
     .dropdown {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 80px;
         left: 0;
         width: 100%;
         background: #000000;
@@ -199,15 +223,22 @@ footer {
     .dropdown ul {
         flex-direction: column;
         text-align: center;
+        padding: 20px 0;
     }
     .dropdown ul li {
-        margin: 15px 0;
+        margin: 20px 0;
     }
     .dropdown ul li a {
         font-size: 18px;
     }
-    /* Mantener navbar sin compresión */
     .navbar {
         min-width: 390px;
+    }
+    /* Ajuste para #about en móviles */
+    #about {
+        padding: 60px 20px; /* Reducido pero aún espacioso */
+    }
+    .about-content {
+        padding: 20px; /* Padding reducido en móviles */
     }
 }
