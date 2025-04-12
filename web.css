@@ -15,7 +15,7 @@
     --color-input: #444; /* Gris claro para inputs */
     --color-placeholder: #aaa; /* Gris para placeholders */
     --color-hover: #cc0; /* Amarillo oscuro para hover */
-    --tamano-logo: 56px; /* Aumentado de 48px */
+    --tamano-logo: 60px; /* Aumentado de 56px */
     --tamano-titulo: 24px; /* Tamaño de títulos h1 */
     --tamano-texto: 16px; /* Tamaño de párrafos */
     --logo-anim-duration: 2s; /* Duración de la animación del logo */
@@ -123,10 +123,17 @@ body {
     color: var(--color-acento);
     text-decoration: none;
     font-size: var(--tamano-texto);
+    opacity: 0.7; /* Más opaco */
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.9;
 }
 
 .nav-links a.active {
     font-weight: bold;
+    opacity: 1; /* Resalta sin afectar grosor */
 }
 
 /* Contenedor de secciones */
@@ -361,6 +368,11 @@ body {
     margin-bottom: 10px;
 }
 
+.portfolio-item p {
+    font-size: clamp(14px, 4vw, 16px);
+    margin-top: 10px;
+}
+
 .portfolio-media {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -546,6 +558,11 @@ body {
 
     .nav-links a {
         font-size: 20px;
+        opacity: 0.7;
+    }
+
+    .nav-links a.active {
+        opacity: 1;
     }
 
     /* Secciones en columna para móviles */
