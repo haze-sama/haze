@@ -1,44 +1,61 @@
-// Seleccionar todos los enlaces del menú
+// Seleccionar elementos
+const sectionsContainer = document.querySelector('.sections-container');
 const navLinks = document.querySelectorAll('.nav-link');
-// Seleccionar todas las secciones de la página
-const sections = document.querySelectorAll('.section');
+const hamburger = document.querySelector('.hamburger');
+const navLinksContainer = document.querySelector('.nav-links');
 
-// Función para remover la clase 'active' de todos los enlaces
-function removeActiveClasses() {
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-    });
-}
+// Alternar menú hamburguesa
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinksContainer.classList.toggle('open');
+});
 
-// Función para detectar la sección visible y activar el enlace correspondiente
-function setActiveLink() {
-    let scrollPosition = window.scrollY + 100;
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const sectionId = section.getAttribute('id');
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            removeActiveClasses();
-            document.querySelector(`.nav-link[href="#${sectionId}"]`).classList.add('active');
-        }
-    });
-}
-
-// Desplazamiento suave al hacer clic en un enlace del menú
+// Navegación al hacer clic en enlaces
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         const targetId = link.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
-        window.scrollTo({
-            top: targetSection.offsetTop - 80,
-            behavior: 'smooth'
-        });
+        const sectionIndex = Array.from(document.querySelectorAll('.section')).indexOf(targetSection);
+
+        // Deslizamiento horizontal en escritorio, scroll vertical en móvil
+        if (window.innerWidth > 768) {
+            sectionsContainer.style.transform = `translateX(-${sectionIndex * 20}%)`;
+        } else {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Cerrar menú en móviles
+        hamburger.classList.remove('open');
+        navLinksContainer.classList.remove('open');
+
+        // Actualizar enlace activo
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
     });
 });
 
-// Escuchar el evento de scroll para actualizar el enlace activo
-window.addEventListener('scroll', setActiveLink);
+// Actualizar enlace activo al hacer scroll en móviles
+window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 768) {
+        const scrollPosition = window.scrollY + 100;
+        document.querySelectorAll('.section').forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            const sectionId = section.getAttribute('id');
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
+            }
+        });
+    }
+});
 
-// Llamar a la función al cargar la página para establecer el enlace activo inicial
-window.addEventListener('load', setActiveLink);
+// Establecer enlace activo inicial
+window.addEventListener('load', () => {
+    const currentSection = document.querySelector('.section');
+    if (currentSection) {
+        const sectionId = currentSection.getAttribute('id');
+        document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
+    }
+});
