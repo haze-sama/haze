@@ -29,10 +29,10 @@ body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
     position: relative;
-    cursor: none; /* Ocultar cursor por defecto */
+    cursor: auto; /* Cursor nativo */
 }
 
-/* Fondo animado con sprite */
+/* Fondo sprite */
 body::before {
     content: '';
     position: fixed;
@@ -43,13 +43,25 @@ body::before {
     background-image: url('./background-sprite.png');
     background-size: cover;
     opacity: 0.3;
-    animation: fadeBackground 5s infinite ease-in-out;
+    z-index: -3;
+}
+
+/* Efecto de brillo (flash) */
+.background-flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-fondo);
+    animation: flashEffect 30s infinite ease-in-out;
     z-index: -2;
 }
 
-@keyframes fadeBackground {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.5; }
+@keyframes flashEffect {
+    0%, 98% { background-color: var(--color-fondo); }
+    99% { background-color: #333; }
+    100% { background-color: var(--color-fondo); }
 }
 
 /* Textura futurista */
@@ -70,34 +82,6 @@ body::before {
 @keyframes energyFlow {
     0% { background-position: 0 0; }
     100% { background-position: 200% 0; }
-}
-
-/* Cursor personalizado */
-.cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background-color: var(--color-acento);
-    border-radius: 50%;
-    opacity: 0.5;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.2s ease;
-}
-
-.cursor.glow {
-    transform: scale(2);
-    opacity: 0.3;
-}
-
-/* Efecto de cursor en áreas grandes */
-.section:hover ~ body::before,
-.home-left:hover ~ body::before,
-.home-right:hover ~ body::before,
-.carousel-wrapper:hover ~ body::before,
-.mailbox:hover ~ body::before,
-.linktree:hover ~ body::before {
-    opacity: 0.1;
 }
 
 /* Header fijo */
@@ -278,9 +262,9 @@ body::before {
 
 /* Imagen en Home */
 .mask-image {
-    width: 100%;
-    max-width: 200px;
-    aspect-ratio: 1 / 1;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
 }
 
 /* Eslogan en Home */
@@ -346,20 +330,20 @@ body::before {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
     position: absolute;
     bottom: 20px;
+    padding: 0 20px;
 }
 
-#about .section-nav-btn.prev-section-btn { margin-left: 20px; }
-#about .section-nav-btn.next-section-btn { margin-right: 20px; }
+#about .section-nav-btn.prev-section-btn { margin-left: 0; }
+#about .section-nav-btn.next-section-btn { margin-right: 0; }
 
 /* Botón en #contact */
 #contact .section-nav-btn.prev-section-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    position: fixed;
+    bottom: calc(var(--footer-height) + 10px);
+    left: 60px; /* Espacio para WhatsApp */
+    z-index: 1100;
 }
 
 /* Contenedor del carrusel */
@@ -367,7 +351,7 @@ body::before {
     width: 100%;
     max-width: 600px;
     margin-top: 20px;
-    padding: 0 40px; /* Espacio para botones */
+    padding: 0 40px;
 }
 
 /* Contenedor de controles del carrusel */
@@ -403,8 +387,8 @@ body::before {
     height: 24px;
 }
 
-.prev-btn { left: -30px; } /* Alejado del borde */
-.next-btn { right: -30px; } /* Alejado del borde */
+.prev-btn { left: -30px; }
+.next-btn { right: -30px; }
 
 /* Carrusel de servicios */
 .shelf-items {
@@ -570,7 +554,7 @@ body::before {
     width: 100%;
     height: var(--footer-height);
     background-color: var(--color-fondo);
-    display: flex избранные элементы: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
@@ -580,13 +564,20 @@ body::before {
     font-size: 14px;
     color: var(--color-acento);
     animation: waveOpacity var(--logo-anim-duration) infinite ease-in-out;
+    text-align: center;
+}
+
+/* Contenedor de WhatsApp */
+.whatsapp-container {
+    position: absolute;
+    left: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 /* Botón de WhatsApp */
 .whatsapp-btn {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
     width: 40px;
     height: 40px;
     opacity: 0;
@@ -691,8 +682,8 @@ body::before {
     }
 
     .mask-image {
-        max-width: 150px;
-        aspect-ratio: 1 / 1;
+        width: 200px;
+        height: 200px;
     }
 
     /* Ocultar botón en móviles */
@@ -720,14 +711,15 @@ body::before {
     /* Botones de #about y #contact en móviles */
     .section-nav-buttons {
         bottom: 10px;
+        padding: 0 10px;
     }
 
-    #about .section-nav-btn.prev-section-btn { margin-left: 10px; }
-    #about .section-nav-btn.next-section-btn { margin-right: 10px; }
+    #about .section-nav-btn.prev-section-btn { margin-left: 0; }
+    #about .section-nav-btn.next-section-btn { margin-right: 0; }
 
     #contact .section-nav-btn.prev-section-btn {
-        top: 10px;
-        left: 10px;
+        bottom: calc(var(--footer-height) + 8px);
+        left: 50px;
     }
 
     /* Linktree apilado en móviles */
@@ -736,10 +728,12 @@ body::before {
     }
 
     /* WhatsApp en móviles */
+    .whatsapp-container {
+        left: 8px;
+    }
+
     .whatsapp-btn {
         width: 36px;
         height: 36px;
-        bottom: 8px;
-        left: 8px;
     }
 }
