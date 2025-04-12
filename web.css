@@ -15,7 +15,7 @@
     --color-input: #444; /* Gris claro para inputs */
     --color-placeholder: #aaa; /* Gris para placeholders */
     --color-hover: #cc0; /* Amarillo oscuro para hover */
-    --tamano-logo: 60px; /* Aumentado de 56px */
+    --tamano-logo: 60px; /* Logo tamaño */
     --tamano-titulo: 24px; /* Tamaño de títulos h1 */
     --tamano-texto: 16px; /* Tamaño de párrafos */
     --logo-anim-duration: 2s; /* Duración de la animación del logo */
@@ -28,6 +28,76 @@
 body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
+    position: relative;
+    cursor: none; /* Ocultar cursor por defecto */
+}
+
+/* Fondo animado con sprite */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./background-sprite.png');
+    background-size: cover;
+    opacity: 0.3;
+    animation: fadeBackground 5s infinite ease-in-out;
+    z-index: -2;
+}
+
+@keyframes fadeBackground {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.5; }
+}
+
+/* Textura futurista */
+.texture-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./texture-lines.png');
+    background-size: 200%;
+    opacity: 0.2;
+    animation: energyFlow 10s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes energyFlow {
+    0% { background-position: 0 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Cursor personalizado */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-acento);
+    border-radius: 50%;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease;
+}
+
+.cursor.glow {
+    transform: scale(2);
+    opacity: 0.3;
+}
+
+/* Efecto de cursor en áreas grandes */
+.section:hover ~ body::before,
+.home-left:hover ~ body::before,
+.home-right:hover ~ body::before,
+.carousel-wrapper:hover ~ body::before,
+.mailbox:hover ~ body::before,
+.linktree:hover ~ body::before {
+    opacity: 0.1;
 }
 
 /* Header fijo */
@@ -123,7 +193,7 @@ body {
     color: var(--color-acento);
     text-decoration: none;
     font-size: var(--tamano-texto);
-    opacity: 0.7; /* Más opaco */
+    opacity: 0.7;
     transition: opacity 0.3s;
 }
 
@@ -133,7 +203,14 @@ body {
 
 .nav-links a.active {
     font-weight: bold;
-    opacity: 1; /* Resalta sin afectar grosor */
+    opacity: 1;
+    animation: shake 0.5s infinite ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
 }
 
 /* Contenedor de secciones */
@@ -157,7 +234,7 @@ body {
     align-items: center;
     text-align: center;
     padding: 20px;
-    position: relative; /* Para botones en #about */
+    position: relative;
 }
 
 /* Estilos para la sección Home */
@@ -242,7 +319,7 @@ body {
     50% { opacity: 0.9; }
 }
 
-/* Botones de navegación en #about */
+/* Botones de navegación en #about y #contact */
 .section-nav-btn {
     background-color: var(--color-acento);
     border: none;
@@ -251,8 +328,6 @@ body {
     cursor: pointer;
     opacity: 0.7;
     transition: transform 0.3s, opacity 0.3s;
-    position: absolute;
-    top: 20px;
     z-index: 10;
 }
 
@@ -266,14 +341,33 @@ body {
     height: 24px;
 }
 
-.prev-section-btn { left: 20px; }
-.next-section-btn { right: 20px; }
+/* Contenedor de botones en #about */
+.section-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+}
+
+#about .section-nav-btn.prev-section-btn { margin-left: 20px; }
+#about .section-nav-btn.next-section-btn { margin-right: 20px; }
+
+/* Botón en #contact */
+#contact .section-nav-btn.prev-section-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
 
 /* Contenedor del carrusel */
 .carousel-wrapper {
     width: 100%;
     max-width: 600px;
     margin-top: 20px;
+    padding: 0 40px; /* Espacio para botones */
 }
 
 /* Contenedor de controles del carrusel */
@@ -309,8 +403,8 @@ body {
     height: 24px;
 }
 
-.prev-btn { left: 10px; }
-.next-btn { right: 10px; }
+.prev-btn { left: -30px; } /* Alejado del borde */
+.next-btn { right: -30px; } /* Alejado del borde */
 
 /* Carrusel de servicios */
 .shelf-items {
@@ -324,8 +418,7 @@ body {
 
 .shelf-item {
     flex: 0 0 100%;
-    max-width: calc(100% - 60px);
-    margin: 0 30px;
+    max-width: 100%;
     background-color: var(--color-secundario);
     padding: 20px;
     border-radius: 5px;
@@ -354,8 +447,7 @@ body {
 
 .portfolio-item {
     flex: 0 0 100%;
-    max-width: calc(100% - 60px);
-    margin: 0 30px;
+    max-width: 100%;
     background-color: var(--color-secundario);
     padding: 20px;
     border-radius: 5px;
@@ -478,7 +570,7 @@ body {
     width: 100%;
     height: var(--footer-height);
     background-color: var(--color-fondo);
-    display: flex;
+    display: flex избранные элементы: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
@@ -563,6 +655,7 @@ body {
 
     .nav-links a.active {
         opacity: 1;
+        animation: shake 0.5s infinite ease-in-out;
     }
 
     /* Secciones en columna para móviles */
@@ -608,26 +701,34 @@ body {
     }
 
     /* Carruseles en móviles */
+    .carousel-wrapper {
+        padding: 0 20px;
+    }
+
     .shelf-item,
     .portfolio-item {
-        max-width: calc(100% - 20px);
-        margin: 0 10px;
+        max-width: 100%;
     }
 
     .carousel-btn {
         padding: 8px;
     }
 
-    .prev-btn { left: 5px; }
-    .next-btn { right: 5px; }
+    .prev-btn { left: -15px; }
+    .next-btn { right: -15px; }
 
-    /* Botones de #about en móviles */
-    .section-nav-btn {
-        padding: 8px;
+    /* Botones de #about y #contact en móviles */
+    .section-nav-buttons {
+        bottom: 10px;
     }
 
-    .prev-section-btn { left: 10px; }
-    .next-section-btn { right: 10px; }
+    #about .section-nav-btn.prev-section-btn { margin-left: 10px; }
+    #about .section-nav-btn.next-section-btn { margin-right: 10px; }
+
+    #contact .section-nav-btn.prev-section-btn {
+        top: 10px;
+        left: 10px;
+    }
 
     /* Linktree apilado en móviles */
     .linktree {
