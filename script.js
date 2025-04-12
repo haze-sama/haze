@@ -12,6 +12,16 @@ const servicesPrevBtn = document.querySelector('#services .prev-btn');
 const servicesNextBtn = document.querySelector('#services .next-btn');
 const portfolioPrevBtn = document.querySelector('#portfolio .prev-btn');
 const portfolioNextBtn = document.querySelector('#portfolio .next-btn');
+const prevSectionBtn = document.querySelector('.prev-section-btn');
+const nextSectionBtnAbout = document.querySelector('#about .next-section-btn');
+const whatsappBtn = document.querySelector('.whatsapp-btn');
+
+// Mostrar botón de WhatsApp tras 5 segundos
+if (whatsappBtn) {
+    setTimeout(() => {
+        whatsappBtn.classList.add('show');
+    }, 5000);
+}
 
 // Alternar menú hamburguesa
 hamburger.addEventListener('click', () => {
@@ -44,7 +54,7 @@ navLinks.forEach(link => {
     });
 });
 
-// Botón para ir a la siguiente sección
+// Botón para ir a la siguiente sección en #home
 if (nextSectionBtn) {
     nextSectionBtn.addEventListener('click', () => {
         const servicesSection = document.getElementById('services');
@@ -62,6 +72,41 @@ if (nextSectionBtn) {
     });
 }
 
+// Botones de navegación en #about
+if (prevSectionBtn) {
+    prevSectionBtn.addEventListener('click', () => {
+        const servicesSection = document.getElementById('services');
+        const sectionIndex = 1;
+
+        if (window.innerWidth > 768) {
+            sectionsContainer.style.transform = `translateX(-${sectionIndex * 20}%)`;
+        } else {
+            servicesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Actualizar enlace activo
+        navLinks.forEach(l => l.classList.remove('active'));
+        document.querySelector('.nav-link[href="#services"]').classList.add('active');
+    });
+}
+
+if (nextSectionBtnAbout) {
+    nextSectionBtnAbout.addEventListener('click', () => {
+        const portfolioSection = document.getElementById('portfolio');
+        const sectionIndex = 3;
+
+        if (window.innerWidth > 768) {
+            sectionsContainer.style.transform = `translateX(-${sectionIndex * 20}%)`;
+        } else {
+            portfolioSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Actualizar enlace activo
+        navLinks.forEach(l => l.classList.remove('active'));
+        document.querySelector('.nav-link[href="#portfolio"]').classList.add('active');
+    });
+}
+
 // Navegación del carrusel de servicios
 if (servicesCarousel && servicesPrevBtn && servicesNextBtn && servicesProgressCircle) {
     const items = servicesCarousel.querySelectorAll('.shelf-item');
@@ -69,12 +114,30 @@ if (servicesCarousel && servicesPrevBtn && servicesNextBtn && servicesProgressCi
     let currentIndex = 0;
 
     const updateProgress = () => {
-        const progress = (currentIndex / (totalItems - 1)) * 100;
-        servicesProgressCircle.style.left = `${progress}%`;
+        if (totalItems > 1) {
+            const progress = (currentIndex / (totalItems - 1)) * 100;
+            servicesProgressCircle.style.left = `${progress}%`;
+        } else {
+            servicesProgressCircle.style.left = '0%';
+        }
     };
 
     servicesPrevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
+        if (currentIndex === 0) {
+            // Ir a #home
+            const homeSection = document.getElementById('home');
+            const sectionIndex = 0;
+
+            if (window.innerWidth > 768) {
+                sectionsContainer.style.transform = `translateX(-${sectionIndex * 20}%)`;
+            } else {
+                homeSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Actualizar enlace activo
+            navLinks.forEach(l => l.classList.remove('active'));
+            document.querySelector('.nav-link[href="#home"]').classList.add('active');
+        } else {
             currentIndex--;
             servicesCarousel.scrollTo({
                 left: currentIndex * servicesCarousel.offsetWidth,
@@ -85,7 +148,21 @@ if (servicesCarousel && servicesPrevBtn && servicesNextBtn && servicesProgressCi
     });
 
     servicesNextBtn.addEventListener('click', () => {
-        if (currentIndex < totalItems - 1) {
+        if (currentIndex === totalItems - 1) {
+            // Ir a #about
+            const aboutSection = document.getElementById('about');
+            const sectionIndex = 2;
+
+            if (window.innerWidth > 768) {
+                sectionsContainer.style.transform = `translateX(-${sectionIndex * 20}%)`;
+            } else {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Actualizar enlace activo
+            navLinks.forEach(l => l.classList.remove('active'));
+            document.querySelector('.nav-link[href="#about"]').classList.add('active');
+        } else {
             currentIndex++;
             servicesCarousel.scrollTo({
                 left: currentIndex * servicesCarousel.offsetWidth,
@@ -101,6 +178,9 @@ if (servicesCarousel && servicesPrevBtn && servicesNextBtn && servicesProgressCi
         currentIndex = Math.round(scrollLeft / itemWidth);
         updateProgress();
     });
+
+    // Inicializar progreso
+    updateProgress();
 }
 
 // Navegación del carrusel de portafolio
@@ -110,8 +190,12 @@ if (portfolioCarousel && portfolioPrevBtn && portfolioNextBtn && portfolioProgre
     let currentIndex = 0;
 
     const updateProgress = () => {
-        const progress = (currentIndex / (totalItems - 1)) * 100;
-        portfolioProgressCircle.style.left = `${progress}%`;
+        if (totalItems > 1) {
+            const progress = (currentIndex / (totalItems - 1)) * 100;
+            portfolioProgressCircle.style.left = `${progress}%`;
+        } else {
+            portfolioProgressCircle.style.left = '0%';
+        }
     };
 
     portfolioPrevBtn.addEventListener('click', () => {
@@ -142,6 +226,9 @@ if (portfolioCarousel && portfolioPrevBtn && portfolioNextBtn && portfolioProgre
         currentIndex = Math.round(scrollLeft / itemWidth);
         updateProgress();
     });
+
+    // Inicializar progreso
+    updateProgress();
 }
 
 // Actualizar enlace activo al hacer scroll en móviles
