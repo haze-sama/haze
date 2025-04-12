@@ -1,16 +1,16 @@
 /* Reset y Estilos Generales */
-/* Elimina márgenes y paddings por defecto */
+/* Elimina márgenes y paddings por defecto para un control total del diseño */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Incluye padding y border en el ancho/alto */
-    font-family: 'Arial', sans-serif; /* Fuente por defecto */
+    font-family: 'Arial', sans-serif; /* Define la fuente por defecto */
 }
 
 /* Estilo base del cuerpo */
 body {
-    background-color: #000; /* Fondo negro */
-    color: #fff; /* Texto blanco */
+    background-color: #000; /* Fondo negro para el ambiente del cuarto */
+    color: #fff; /* Texto blanco para contraste */
 }
 
 /* Header Fijo */
@@ -25,15 +25,15 @@ body {
 /* Contenedor del menú de navegación */
 .navbar {
     display: flex; /* Usa flexbox para alinear logo y enlaces */
-    justify-content: space-between; /* Espacia logo y enlaces */
-    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Espacia logo y enlaces a los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
     padding: 20px 50px; /* Espaciado interno */
 }
 
 /* Estilo del logo */
 .logo {
     font-size: 36px; /* Tamaño de fuente grande */
-    font-weight: bold; /* Negrita */
+    font-weight: bold; /* Negrita para destacar */
 }
 
 /* Lista de enlaces de navegación */
@@ -44,7 +44,7 @@ body {
 
 /* Espaciado entre los elementos de la lista */
 .nav-links li {
-    margin-left: 20px; /* Espacio entre enlaces */
+    margin-left: 20px; /* Espacio entre cada enlace */
 }
 
 /* Estilo de los enlaces del menú */
@@ -63,17 +63,20 @@ body {
 main {
     padding-top: 80px; /* Espacio para el header fijo */
     padding-bottom: 60px; /* Espacio para el footer fijo */
+    display: flex; /* Usa flexbox para alinear las secciones */
+    flex-direction: column; /* Alinea las secciones verticalmente */
 }
 
 /* Estilo base para todas las secciones */
 .section {
-    min-height: 100vh; /* Ocupa el alto de la ventana */
+    min-height: 100vh; /* Ocupa al menos el alto de la ventana */
     display: flex; /* Usa flexbox para centrar contenido */
     flex-direction: column; /* Alinea elementos verticalmente */
     justify-content: center; /* Centra verticalmente */
     align-items: center; /* Centra horizontalmente */
     text-align: center; /* Centra el texto */
     padding: 50px; /* Espaciado interno */
+    width: 100%; /* Asegura que ocupe todo el ancho */
 }
 
 /* Estilo de los títulos principales */
@@ -84,7 +87,7 @@ main {
 
 /* Estilo de los párrafos */
 .section p {
-    font-size: 16px; /* Tamaño de fuente */
+    font-size: 16px; /* Tamaño de fuente legible */
     margin-bottom: 20px; /* Espacio debajo */
 }
 
