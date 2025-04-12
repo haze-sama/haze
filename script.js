@@ -4,6 +4,9 @@ const navLinks = document.querySelectorAll('.nav-link');
 const hamburger = document.querySelector('.hamburger');
 const navLinksContainer = document.querySelector('.nav-links');
 const nextSectionBtn = document.querySelector('.next-section-btn');
+const servicesCarousel = document.querySelector('.shelf-items');
+const portfolioCarousel = document.querySelector('.carousel-items');
+const progressCircle = document.querySelector('.progress-circle');
 
 // Alternar menú hamburguesa
 hamburger.addEventListener('click', () => {
@@ -40,7 +43,7 @@ navLinks.forEach(link => {
 if (nextSectionBtn) {
     nextSectionBtn.addEventListener('click', () => {
         const servicesSection = document.getElementById('services');
-        const sectionIndex = 1; // Índice de #services
+        const sectionIndex = 1;
 
         if (window.innerWidth > 768) {
             sectionsContainer.style.transform = `translateX(-${sectionIndex * 20}%)`;
@@ -78,3 +81,19 @@ window.addEventListener('load', () => {
         document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
     }
 });
+
+// Manejar carrusel de portafolio y barra de progreso
+if (portfolioCarousel && progressCircle) {
+    const items = portfolioCarousel.querySelectorAll('.portfolio-item');
+    const totalItems = items.length;
+
+    portfolioCarousel.addEventListener('scroll', () => {
+        const scrollLeft = portfolioCarousel.scrollLeft;
+        const itemWidth = portfolioCarousel.scrollWidth / totalItems;
+        const currentIndex = Math.round(scrollLeft / itemWidth);
+        const progress = (currentIndex / (totalItems - 1)) * 100;
+
+        // Mover el círculo
+        progressCircle.style.left = `${progress}%`;
+    });
+}
