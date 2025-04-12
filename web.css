@@ -266,8 +266,8 @@ body::before {
 
 /* Imagen en Home */
 .mask-image {
-    width: 300px;
-    height: auto;
+    width: auto;
+    height: 300px;
     object-fit: contain;
     margin-top: 0;
 }
