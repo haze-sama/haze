@@ -96,6 +96,8 @@ main {
     width: 300px; /* Ancho del video */
     height: 200px; /* Alto del video */
     margin-bottom: 20px; /* Espacio debajo */
+    border: none; /* Elimina cualquier borde del video */
+    outline: none; /* Elimina el contorno que algunos navegadores añaden */
 }
 
 /* Imagen de la máscara */
@@ -103,6 +105,8 @@ main {
     width: 200px; /* Ancho de la imagen */
     height: auto; /* Altura automática */
     margin-bottom: 20px; /* Espacio debajo */
+    border: none; /* Elimina cualquier borde de la imagen */
+    outline: none; /* Elimina el contorno que algunos navegadores añaden */
 }
 
 /* Texto "IN HUSTLE WE TRUST" */
