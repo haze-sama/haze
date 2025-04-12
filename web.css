@@ -20,6 +20,8 @@
     --tamano-texto: 16px; /* Tamaño de párrafos */
     --logo-anim-duration: 2s; /* Duración de la animación del logo */
     --btn-anim-duration: 1s; /* Duración del titileo del botón */
+    --header-height: 80px; /* Altura del header */
+    --footer-height: 60px; /* Altura del footer */
 }
 
 /* Estilos del cuerpo */
@@ -33,8 +35,9 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
+    height: var(--header-height);
     background-color: var(--color-fondo);
-    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    z-index: 1000; /* Asegura que esté encima */
 }
 
 /* Barra de navegación */
@@ -42,14 +45,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px; /* Espaciado interno */
+    padding: 20px 50px;
+    height: 100%;
 }
 
 /* Logo */
 .logo {
     font-size: var(--tamano-logo);
     font-weight: bold;
-    display: flex; /* Alinea las letras horizontalmente */
+    display: flex;
 }
 
 /* Colores y animación para cada letra del logo */
@@ -57,11 +61,11 @@ body {
 .letter-a,
 .letter-z,
 .letter-e {
-    color: var(--color-acento); /* Amarillo para todas */
+    color: var(--color-acento);
     animation: waveOpacity var(--logo-anim-duration) infinite ease-in-out;
 }
 
-/* Retrasos para crear el efecto de onda */
+/* Retrasos para el efecto de onda */
 .letter-h { animation-delay: 0s; }
 .letter-a { animation-delay: 0.2s; }
 .letter-z { animation-delay: 0.4s; }
@@ -75,20 +79,20 @@ body {
 
 /* Menú hamburguesa */
 .hamburger {
-    display: none; /* Oculta en escritorio */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 20px;
     cursor: pointer;
-    z-index: 1100; /* Sobre el menú */
+    z-index: 1100;
 }
 
 .hamburger span {
     background-color: var(--color-acento);
     height: 3px;
     width: 100%;
-    transition: all 0.3s ease; /* Animación suave */
+    transition: all 0.3s ease;
 }
 
 /* Animación del hamburguesa al abrir */
@@ -112,7 +116,7 @@ body {
 }
 
 .nav-links li {
-    margin-left: 20px; /* Espacio entre enlaces */
+    margin-left: 20px;
 }
 
 .nav-links a {
@@ -122,32 +126,35 @@ body {
 }
 
 .nav-links a.active {
-    font-weight: bold; /* Resalta el enlace activo */
+    font-weight: bold;
 }
 
 /* Contenedor de secciones */
 .sections-container {
+    margin-top: var(--header-height); /* Espacio para el header */
+    margin-bottom: var(--footer-height); /* Espacio para el footer */
+    min-height: calc(100vh - var(--header-height) - var(--footer-height)); /* Altura entre header y footer */
     display: flex;
-    width: 500%; /* 5 secciones */
-    height: 100vh;
+    width: 500%;
+    height: 100%;
     overflow-x: hidden;
-    transition: transform 0.5s ease; /* Deslizamiento suave */
+    transition: transform 0.5s ease;
 }
 
 /* Estilo base para secciones */
 .section {
-    width: 20%; /* 100% / 5 secciones */
-    min-height: 100vh;
+    width: 20%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 50px;
-    overflow-y: auto; /* Scroll vertical si hay mucho contenido */
+    overflow-y: auto;
 }
 
-/* Estilos específicos para la sección Home */
+/* Estilos para la sección Home */
 .home-section {
     display: flex;
     flex-direction: row;
@@ -157,13 +164,13 @@ body {
 
 .home-left,
 .home-right {
-    width: 50%; /* Columnas simétricas */
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    gap: 20px; /* Espacio entre elementos */
+    gap: 20px;
 }
 
 /* Títulos */
@@ -180,17 +187,17 @@ body {
 
 /* Video de YouTube */
 .video {
-    width: 100%; /* Ocupa todo el ancho de la columna */
-    max-width: 400px; /* Limita el tamaño */
-    height: 225px; /* Proporción 16:9 */
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 16 / 9; /* Relación de aspecto fija */
     border: none;
 }
 
 /* Imagen en Home */
 .mask-image {
     width: 100%;
-    max-width: 200px; /* Tamaño máximo */
-    height: auto;
+    max-width: 200px;
+    aspect-ratio: 1 / 1; /* Relación de aspecto cuadrada */
 }
 
 /* Eslogan en Home */
@@ -208,14 +215,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.7; /* Opacidad inicial */
-    transition: transform 0.3s, opacity 0.3s; /* Transiciones suaves */
-    animation: flickerOpacity var(--btn-anim-duration) infinite ease-in-out; /* Titileo */
+    opacity: 0.7;
+    transition: transform 0.3s, opacity 0.3s;
+    animation: flickerOpacity var(--btn-anim-duration) infinite ease-in-out;
 }
 
 .next-section-btn:hover {
-    transform: scale(1.2); /* Agrandarse en hover */
-    opacity: 1; /* Opacidad completa */
+    transform: scale(1.2);
+    opacity: 1;
 }
 
 .next-section-btn svg {
@@ -229,158 +236,21 @@ body {
     50% { opacity: 0.9; }
 }
 
-/* Servicios */
+/* Carrusel de servicios */
 .shelf-items {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 20px;
     margin-top: 20px;
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+}
+
+.shelf-items::-webkit-scrollbar {
+    display: none; /* Oculta scrollbar en Chrome/Safari */
 }
 
 .shelf-item {
-    background-color: var(--color-secundario);
-    padding: 20px;
-    border-radius: 5px;
-    width: 200px;
-    text-align: center;
-}
-
-.shelf-item h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.shelf-item p {
-    font-size: 14px;
-}
-
-/* Formulario de contacto */
-.mailbox {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    max-width: 400px;
-    background-color: var(--color-secundario);
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.mailbox input,
-.mailbox textarea {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--color-input);
-    color: var(--color-texto);
-    font-size: 14px;
-}
-
-.mailbox textarea {
-    height: 100px;
-    resize: none;
-}
-
-.mailbox input::placeholder,
-.mailbox textarea::placeholder {
-    color: var(--color-placeholder);
-}
-
-.mailbox .submit {
-    background-color: var(--color-acento);
-    color: var(--color-fondo);
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Linktree en Sobre Mí */
-.linktree {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.linktree-btn {
-    background-color: var(--color-acento);
-    color: var(--color-fondo);
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s;
-}
-
-.linktree-btn:hover {
-    background-color: var(--color-hover);
-}
-
-/* Footer */
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--color-fondo);
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    z-index: 1000;
-}
-
-/* Responsividad */
-@media (max-width: 768px) {
-    /* Mostrar hamburguesa en móviles */
-    .hamburger {
-        display: flex;
-    }
-
-    /* Menú lateral en móviles */
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        background-color: var(--color-fondo);
-        width: 70%;
-        height: 100vh;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-    }
-
-    .nav-links.open {
-        transform: translateX(0);
-    }
-
-    .nav-links li {
-        margin: 20px 0;
-    }
-
-    .nav-links a {
-        font-size: 20px;
-    }
-
-    /* Secciones en columna para móviles */
-    .sections-container {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .section {
-        width: 100%;
-    }
-
-    /* Home en móviles */
-    .home-section {
-        flex-direction: column;
-    }
-
-    .home-left,
-    .home-right {
-        width: 100%;
-    }
-}
+    flex: 0 0 200px; /* Tamaño f
