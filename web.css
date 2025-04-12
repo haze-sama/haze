@@ -140,16 +140,13 @@ body {
 
 .home-left,
 .home-right {
-    width: 50%; /* Cada mitad ocupa el 50% */
+    width: 50%; /* Columnas simétricas */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-}
-
-.home-right {
-    gap: 20px; /* Espacio entre frase, imagen y eslogan */
+    gap: 20px; /* Espacio entre elementos */
 }
 
 /* Títulos */
@@ -166,10 +163,9 @@ body {
 
 /* Video de YouTube */
 .video {
-    width: 100%; /* Ocupa todo el ancho de la mitad */
+    width: 100%; /* Ocupa todo el ancho de la columna */
     max-width: 400px; /* Limita el tamaño */
     height: 225px; /* Proporción 16:9 */
-    margin-bottom: 20px;
     border: none;
 }
 
@@ -178,12 +174,33 @@ body {
     width: 100%;
     max-width: 200px; /* Tamaño máximo */
     height: auto;
-    margin-bottom: 20px;
 }
 
 /* Eslogan en Home */
 .hustle-text {
     font-size: 18px;
+}
+
+/* Botón para siguiente sección */
+.next-section-btn {
+    background-color: var(--color-acento);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.next-section-btn:hover {
+    background-color: var(--color-hover);
+}
+
+.next-section-btn svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* Servicios */
