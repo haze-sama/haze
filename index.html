@@ -1,88 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Declara el tipo de documento como HTML5 -->
+<html lang="es"> <!-- Define el idioma del documento como español -->
 <head>
+    <!-- Define la codificación de caracteres para soportar caracteres especiales -->
     <meta charset="UTF-8">
+    <!-- Configura la página para que sea responsiva -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haze-Sama | Innovarts.tech</title>
-    <link rel="stylesheet" type="text/css" href="web.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <!-- Establece el título de la página -->
+    <title>HAZE | Mi Nido Digital</title>
+    <!-- Enlaza el archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Barra de navegación fija con hamburguesa -->
-    <header class="navbar">
-        <div class="logo">H A Z E</div>
-        <div class="menu-toggle">☰</div>
-        <nav class="dropdown">
-            <ul>
-                <li><a href="#" data-section="home" class="active">Home</a></li>
-                <li><a href="#" data-section="services">Servicios</a></li>
-                <li><a href="#" data-section="portfolio">Portafolio</a></li>
-                <li><a href="#" data-section="contact">Contacto</a></li>
-                <li><a href="#" data-section="about">Sobre mí</a></li>
+    <!-- Header fijo con el menú de navegación -->
+    <header class="header">
+        <!-- Elemento de navegación con logo y enlaces -->
+        <nav class="navbar">
+            <!-- Contenedor del logo -->
+            <div class="logo">
+                <!-- Texto que representa la marca HAZE -->
+                <span>HAZE</span>
+            </div>
+            <!-- Lista de enlaces del menú -->
+            <ul class="nav-links">
+                <!-- Enlace a la sección de bienvenida -->
+                <li><a href="#home" class="nav-link">HOME</a></li>
+                <!-- Enlace a la sección sobre ti -->
+                <li><a href="#about" class="nav-link">Rincón Personal</a></li>
+                <!-- Enlace a la sección de portafolio -->
+                <li><a href="#portfolio" class="nav-link">PORTAFOLIO</a></li>
+                <!-- Enlace a la sección de servicios -->
+                <li><a href="#services" class="nav-link">SERVICIOS</a></li>
+                <!-- Enlace a la sección de contacto -->
+                <li><a href="#contact" class="nav-link">CONTACTO</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Contenedor de vistas -->
-    <main id="content">
-        <!-- Vista Home -->
-        <section id="home" class="section active">
-            <h1>"The world is yours", me lo dijo Nas y le creí...</h1>
-            <iframe width="280" height="158" src="https://www.youtube.com/embed/e5PnuIRnJW8?si=e1NcUA589IqkBrCb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <div class="custom-image">
-                <img src="https://raw.githubusercontent.com/haze-sama/haze/main/anon_gang.png" alt="In Gold We Trust">
-            </div>
-            <div class="slogan">In Hustle We Trust</div>
+    <!-- Contenido principal con todas las secciones -->
+    <main>
+        <!-- Sección de bienvenida con título, video, imagen y texto -->
+        <section id="home" class="section">
+            <!-- Título principal -->
+            <h1>"THE WORLD IS YOURS", ME LO DIJO NAS Y LE CREÍ...</h1>
+            <!-- Video de YouTube -->
+            <iframe class="video" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            <!-- Imagen de la máscara -->
+            <img class="mask-image" src="mask-image.jpg" alt="Máscara con huellas dactilares">
+            <!-- Texto debajo de la imagen -->
+            <p class="hustle-text">IN HUSTLE WE TRUST</p>
         </section>
 
-        <!-- Vista Servicios -->
-        <section id="services" class="section">
-            <h2>Servicios</h2>
-            <ul>
-                <li>Diseño y desarrollo de webs/apps</li>
-                <li>Contenido 2D especializado (banners, miniaturas, logos, iconos, y más)</li>
-                <li>Copywriting especializado con optimización SEO</li>
-                <li>Servicios de edición, post-producción e incluso efectos audiovisuales</li>
-            </ul>
-        </section>
-
-        <!-- Vista Portafolio -->
-        <section id="portfolio" class="section">
-            <h2>Portafolio</h2>
-            <div class="portfolio-grid">
-                <div class="item">Logo Minimalista</div>
-                <div class="item">Landing Animada</div>
-                <div class="item">Video Promo</div>
-            </div>
-        </section>
-
-        <!-- Vista Contacto -->
-        <section id="contact" class="section">
-            <h2>Contacto</h2>
-            <form action="https://formsubmit.co/victor.wendehake@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Nombre" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Mensaje" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-
-        <!-- Vista Sobre mí -->
+        <!-- Sección sobre ti con descripción y lista de herramientas -->
         <section id="about" class="section">
-            <h2>Sobre mí</h2>
-            <div class="about-content">
-                <p>Soy Victor Wendehake, un arquitecto de lo intangible, donde la creatividad se cruza con la precisión analítica para forjar marcas y soluciones digitales que trascienden lo convencional. Mi mente opera en las sombras de la lógica y el caos, destilando ideas complejas en estructuras eficientes que impulsan resultados. Resiliente por diseño, transformo obstáculos en oportunidades, tejiendo sistemas visuales y tecnológicos que no solo funcionan, sino que dominan.</p>
-                <p>Detrás de cada línea de código, cada píxel y cada estrategia, hay una visión deliberada: construir un imperio digital que desafíe lo esperado. Inspirado por los límites de lo posible —desde la audacia de Tesla hasta los enigmas de la estética oriental—, lidero Innovarts.tech como un laboratorio de innovación, donde las marcas no se crean, se esculpen con propósito. Trabajo en silencio, pero mis entregas resuenan con fuerza: eficiencia, impacto, y un toque de misterio que deja a quienes colaboran conmigo anticipando lo que vendrá después.</p>
+            <!-- Título de la sección -->
+            <h1>Mi Rincón Personal</h1>
+            <!-- Párrafo con información -->
+            <p>Soy Víctor, conocido como HAZE. Este rincón es donde guardo mis pensamientos y pasiones. Me dedico a la creación digital, buscando siempre formas de innovar y conectar.</p>
+            <!-- Contenedor para las herramientas -->
+            <div class="tools">
+                <!-- Herramienta 1 -->
+                <div class="tool">Imaginación</div>
+                <!-- Herramienta 2 -->
+                <div class="tool">Curiosidad</div>
+                <!-- Herramienta 3 -->
+                <div class="tool">Creatividad</div>
             </div>
+        </section>
+
+        <!-- Sección de portafolio representada como un escritorio -->
+        <section id="portfolio" class="section">
+            <!-- Título de la sección -->
+            <h1>Mi Escritorio</h1>
+            <!-- Párrafo introductorio -->
+            <p>Este es mi escritorio, donde trabajo en mis creaciones. Echa un vistazo a lo que he estado haciendo.</p>
+            <!-- Contenedor para los elementos del escritorio -->
+            <div class="desk-items">
+                <!-- Elemento 1 -->
+                <div class="desk-item">
+                    <!-- Título del elemento -->
+                    <h3>Creación 1</h3>
+                    <!-- Descripción -->
+                    <p>Un proyecto que refleja mi pasión por la creatividad.</p>
+                </div>
+                <!-- Elemento 2 -->
+                <div class="desk-item">
+                    <h3>Creación 2</h3>
+                    <p>Otro trabajo que me desafió a innovar.</p>
+                </div>
+                <!-- Elemento 3 -->
+                <div class="desk-item">
+                    <h3>Creación 3</h3>
+                    <p>Un experimento que me llevó a nuevas ideas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de servicios representada como una estantería -->
+        <section id="services" class="section">
+            <!-- Título de la sección -->
+            <h1>Mi Estantería</h1>
+            <!-- Párrafo introductorio -->
+            <p>En mi estantería guardo lo que puedo ofrecerte. Cada "libro" es una solución que puedo brindarte.</p>
+            <!-- Contenedor para los elementos de la estantería -->
+            <div class="shelf-items">
+                <!-- Elemento 1 -->
+                <div class="shelf-item">
+                    <!-- Título del elemento -->
+                    <h3>Libro 1</h3>
+                    <!-- Descripción -->
+                    <p>Una solución para tus ideas creativas.</p>
+                </div>
+                <!-- Elemento 2 -->
+                <div class="shelf-item">
+                    <h3>Libro 2</h3>
+                    <p>Un enfoque innovador para tus proyectos.</p>
+                </div>
+                <!-- Elemento 3 -->
+                <div class="shelf-item">
+                    <h3>Libro 3</h3>
+                    <p>Apoyo para llevar tus visiones a la realidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de contacto representada como un buzón -->
+        <section id="contact" class="section">
+            <!-- Título de la sección -->
+            <h1>Mi Buzón</h1>
+            <!-- Párrafo introductorio -->
+            <p>¿Quieres dejarme un mensaje? Usa mi buzón y te responderé pronto.</p>
+            <!-- Formulario para enviar mensajes -->
+            <form class="mailbox">
+                <!-- Campo para el nombre -->
+                <input type="text" placeholder="Tu Nombre" required>
+                <!-- Campo para el correo -->
+                <input type="email" placeholder="Tu Correo" required>
+                <!-- Área de texto para el mensaje -->
+                <textarea placeholder="Tu Mensaje" required></textarea>
+                <!-- Botón para enviar -->
+                <button type="submit" class="submit">Dejar Mensaje</button>
+            </form>
         </section>
     </main>
 
-    <!-- Footer fijo -->
-    <footer>© By Victor Wendehake</footer>
+    <!-- Footer fijo con información -->
+    <footer class="footer">
+        <!-- Texto del footer -->
+        <p>© BY VICTOR WENDEHAKE</p>
+    </footer>
 
-    <!-- JavaScript -->
+    <!-- Enlaza el archivo JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

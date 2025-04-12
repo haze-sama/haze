@@ -1,243 +1,212 @@
-/* Reset */
+/* Reset y Estilos Generales */
+/* Elimina márgenes y paddings por defecto */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Incluye padding y border en el ancho/alto */
+    font-family: 'Arial', sans-serif; /* Fuente por defecto */
 }
 
+/* Estilo base del cuerpo */
 body {
-    background: #1A1A1A;
-    color: #FFFFFF;
-    font-family: 'Rubik Mono One', sans-serif;
-    overflow-x: hidden;
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
 }
 
-/* Navbar fija con hamburguesa */
+/* Header Fijo */
+.header {
+    position: fixed; /* Fija el header en la parte superior */
+    top: 0; /* Alinea al borde superior */
+    width: 100%; /* Ocupa todo el ancho */
+    background-color: #000; /* Fondo negro */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Contenedor del menú de navegación */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #000000;
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    border-bottom: 2px solid gold;
-    min-width: 390px;
+    display: flex; /* Usa flexbox para alinear logo y enlaces */
+    justify-content: space-between; /* Espacia logo y enlaces */
+    align-items: center; /* Centra verticalmente */
+    padding: 20px 50px; /* Espaciado interno */
 }
 
+/* Estilo del logo */
 .logo {
-    color: gold;
-    font-size: 48px;
-    letter-spacing: 10px;
-    margin-left: 30px;
+    font-size: 36px; /* Tamaño de fuente grande */
+    font-weight: bold; /* Negrita */
 }
 
-.menu-toggle {
-    color: gold;
-    font-size: 24px;
-    cursor: pointer;
-    display: none;
-    margin-right: 30px;
+/* Lista de enlaces de navegación */
+.nav-links {
+    display: flex; /* Alinea los enlaces horizontalmente */
+    list-style: none; /* Elimina los puntos de la lista */
 }
 
-.dropdown ul {
-    list-style: none;
-    display: flex;
-    padding: 0 20px;
+/* Espaciado entre los elementos de la lista */
+.nav-links li {
+    margin-left: 20px; /* Espacio entre enlaces */
 }
 
-.dropdown ul li {
-    margin: 0 20px;
+/* Estilo de los enlaces del menú */
+.nav-links a {
+    color: #ff0; /* Amarillo para los enlaces */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 16px; /* Tamaño de fuente */
 }
 
-.dropdown ul li a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
+/* Clase para el enlace activo */
+.nav-links a.active {
+    font-weight: bold; /* Negrita para el enlace activo */
 }
 
-.dropdown ul li a:hover, .dropdown ul li a.active {
-    color: gold;
+/* Secciones del Body */
+main {
+    padding-top: 80px; /* Espacio para el header fijo */
+    padding-bottom: 60px; /* Espacio para el footer fijo */
 }
 
-/* Contenedor principal */
-#content {
-    margin-top: 80px;
-    min-height: calc(100vh - 120px);
-}
-
-/* Secciones - Estilo base */
+/* Estilo base para todas las secciones */
 .section {
-    display: none;
-    padding: 80px 40px;
-    text-align: center;
+    min-height: 100vh; /* Ocupa el alto de la ventana */
+    display: flex; /* Usa flexbox para centrar contenido */
+    flex-direction: column; /* Alinea elementos verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto */
+    padding: 50px; /* Espaciado interno */
 }
 
-.section.active {
-    display: block;
+/* Estilo de los títulos principales */
+.section h1 {
+    font-size: 24px; /* Tamaño de fuente ajustado */
+    margin-bottom: 20px; /* Espacio debajo */
 }
 
-h1 {
-    font-size: 36px;
-    color: #FFFFFF;
-    margin-bottom: 30px;
+/* Estilo de los párrafos */
+.section p {
+    font-size: 16px; /* Tamaño de fuente */
+    margin-bottom: 20px; /* Espacio debajo */
 }
 
-h2 {
-    font-size: 28px;
-    color: gold;
-    margin-bottom: 30px;
+/* Video de YouTube */
+.video {
+    width: 300px; /* Ancho del video */
+    height: 200px; /* Alto del video */
+    margin-bottom: 20px; /* Espacio debajo */
 }
 
-iframe, .custom-image img {
-    max-width: 100%;
-    border: 2px solid gold;
-    margin: 30px auto;
-    display: block;
+/* Imagen de la máscara */
+.mask-image {
+    width: 200px; /* Ancho de la imagen */
+    height: auto; /* Altura automática */
+    margin-bottom: 20px; /* Espacio debajo */
 }
 
-.slogan {
-    color: yellow;
-    font-size: 24px;
-    margin: 30px 0;
+/* Texto "IN HUSTLE WE TRUST" */
+.hustle-text {
+    font-size: 18px; /* Tamaño de fuente */
 }
 
-ul {
-    list-style: none;
-    max-width: 600px;
-    margin: 30px auto;
-    text-align: center;
-    padding: 0 20px;
+/* Herramientas en la sección Sobre Mí */
+.tools {
+    display: flex; /* Alinea las herramientas horizontalmente */
+    gap: 15px; /* Espacio entre herramientas */
+    margin-top: 20px; /* Espacio arriba */
 }
 
-li {
-    margin: 15px 0;
-    font-size: 18px;
+/* Estilo de cada herramienta */
+.tool {
+    background-color: #333; /* Fondo gris oscuro */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente */
 }
 
-form {
-    max-width: 500px;
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
+/* Contenedor para elementos del escritorio y estantería */
+.desk-items,
+.shelf-items {
+    display: flex; /* Alinea los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos */
+    gap: 20px; /* Espacio entre elementos */
+    margin-top: 20px; /* Espacio arriba */
 }
 
-input, textarea {
-    padding: 12px;
-    background: #2D2D2D;
-    border: 1px solid gold;
-    color: #FFFFFF;
-    font-family: sans-serif;
+/* Estilo de los elementos del escritorio y estantería */
+.desk-item,
+.shelf-item {
+    background-color: #333; /* Fondo gris oscuro */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    width: 200px; /* Ancho fijo */
+    text-align: center; /* Centra el texto */
 }
 
-button {
-    padding: 12px;
-    background: gold;
-    color: #000000;
-    border: none;
-    cursor: pointer;
-    font-family: 'Rubik Mono One', sans-serif;
+/* Título dentro de los elementos */
+.desk-item h3,
+.shelf-item h3 {
+    font-size: 20px; /* Tamaño de fuente */
+    margin-bottom: 10px; /* Espacio debajo */
 }
 
-button:hover {
-    background: yellow;
+/* Párrafo dentro de los elementos */
+.desk-item p,
+.shelf-item p {
+    font-size: 14px; /* Tamaño de fuente */
 }
 
-.portfolio-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 800px;
-    margin: 30px auto;
+/* Formulario de Contacto */
+.mailbox {
+    display: flex; /* Alinea los campos verticalmente */
+    flex-direction: column; /* Coloca los campos uno debajo del otro */
+    gap: 10px; /* Espacio entre campos */
+    width: 100%; /* Ocupa todo el ancho */
+    max-width: 400px; /* Limita el ancho máximo */
+    background-color: #333; /* Fondo gris oscuro */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
 }
 
-.item {
-    background: #2D2D2D;
-    padding: 20px;
-    border: 1px solid gold;
-    color: #FFFFFF;
-    width: 200px;
+/* Estilo de los campos de entrada y textarea */
+.mailbox input,
+.mailbox textarea {
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #444; /* Fondo gris más claro */
+    color: #fff; /* Texto blanco */
+    font-size: 14px; /* Tamaño de fuente */
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: #000000;
-    padding: 20px;
-    text-align: center;
-    color: gold;
-    border-top: 2px solid gold;
+/* Altura del textarea */
+.mailbox textarea {
+    height: 100px; /* Altura fija */
+    resize: none; /* Impide redimensionar */
 }
 
-/* Estilo específico para #about */
-#about {
-    padding: 100px 60px;
+/* Estilo del placeholder */
+.mailbox input::placeholder,
+.mailbox textarea::placeholder {
+    color: #aaa; /* Color gris claro */
 }
 
-#about h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    text-transform: uppercase;
+/* Botón de envío del formulario */
+.mailbox .submit {
+    background-color: #ff0; /* Fondo amarillo */
+    color: #000; /* Texto negro */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
 }
 
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid gold;
-}
-
-.about-content p {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 25px;
-    color: #E0E0E0;
-    text-align: justify;
-}
-
-/* Responsive - Menú hamburguesa */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-    .dropdown {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: #000000;
-        border-bottom: 2px solid gold;
-    }
-    .dropdown.active {
-        display: block;
-    }
-    .dropdown ul {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 0;
-    }
-    .dropdown ul li {
-        margin: 20px 0;
-    }
-    .dropdown ul li a {
-        font-size: 18px;
-    }
-    .navbar {
-        min-width: 390px;
-    }
-    #about {
-        padding: 60px 20px;
-    }
-    .about-content {
-        padding: 20px;
-    }
+/* Footer Fijo */
+.footer {
+    position: fixed; /* Fija el footer en la parte inferior */
+    bottom: 0; /* Alinea al borde inferior */
+    width: 100%; /* Ocupa todo el ancho */
+    background-color: #000; /* Fondo negro */
+    text-align: center; /* Centra el texto */
+    padding: 20px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de fuente */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
