@@ -12,9 +12,27 @@ const servicesPrevBtn = document.querySelector('#services .prev-btn');
 const servicesNextBtn = document.querySelector('#services .next-btn');
 const portfolioPrevBtn = document.querySelector('#portfolio .prev-btn');
 const portfolioNextBtn = document.querySelector('#portfolio .next-btn');
-const prevSectionBtn = document.querySelector('.prev-section-btn');
-const nextSectionBtnAbout = document.querySelector('#about .next-section-btn');
+const aboutPrevBtn = document.querySelector('#about .prev-section-btn');
+const aboutNextBtn = document.querySelector('#about .next-section-btn');
+const contactPrevBtn = document.querySelector('#contact .prev-section-btn');
 const whatsappBtn = document.querySelector('.whatsapp-btn');
+
+// Crear cursor personalizado
+const cursor = document.createElement('div');
+cursor.classList.add('cursor');
+document.body.appendChild(cursor);
+
+// Mover cursor con el ratón
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+});
+
+// Añadir efecto glow al mover
+document.addEventListener('mousemove', () => {
+    cursor.classList.add('glow');
+    setTimeout(() => cursor.classList.remove('glow'), 200);
+});
 
 // Mostrar botón de WhatsApp tras 5 segundos
 if (whatsappBtn) {
@@ -73,8 +91,8 @@ if (nextSectionBtn) {
 }
 
 // Botones de navegación en #about
-if (prevSectionBtn) {
-    prevSectionBtn.addEventListener('click', () => {
+if (aboutPrevBtn) {
+    aboutPrevBtn.addEventListener('click', () => {
         const servicesSection = document.getElementById('services');
         const sectionIndex = 1;
 
@@ -90,8 +108,26 @@ if (prevSectionBtn) {
     });
 }
 
-if (nextSectionBtnAbout) {
-    nextSectionBtnAbout.addEventListener('click', () => {
+if (aboutNextBtn) {
+    aboutNextBtn.addEventListener('click', () => {
+        const portfolioSection = document.getElementById('portfolio');
+        const sectionIndex = 3;
+
+        if (window.innerWidth > 768) {
+            sectionsContainer.style.transform = `translateX(-${sectionIndex * 20}%)`;
+        } else {
+            portfolioSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Actualizar enlace activo
+        navLinks.forEach(l => l.classList.remove('active'));
+        document.querySelector('.nav-link[href="#portfolio"]').classList.add('active');
+    });
+}
+
+// Botón de navegación en #contact
+if (contactPrevBtn) {
+    contactPrevBtn.addEventListener('click', () => {
         const portfolioSection = document.getElementById('portfolio');
         const sectionIndex = 3;
 
