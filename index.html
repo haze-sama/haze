@@ -1,155 +1,101 @@
-<!DOCTYPE html> <!-- Declara el tipo de documento como HTML5 -->
-<html lang="es"> <!-- Define el idioma del documento como español -->
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <!-- Define la codificación de caracteres para soportar caracteres especiales -->
     <meta charset="UTF-8">
-    <!-- Configura la página para que sea responsiva -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Establece el título de la página -->
-    <title>HAZE | Mi Nido Digital</title>
-    <!-- Enlaza el archivo CSS con ruta relativa explícita -->
+    <meta name="description" content="Servicios digitales de HAZE: diseño web personalizado, gestión de redes sociales y branding digital. Soluciones accesibles y profesionales.">
+    <meta name="keywords" content="diseño web, gestión redes sociales, branding digital, HAZE, soluciones digitales">
+    <title>HAZE | INNOVACION DIGITAL</title>
     <link rel="stylesheet" href="./web.css">
 </head>
 <body>
-    <!-- Header fijo con el menú de navegación -->
     <header class="header">
-        <!-- Elemento de navegación con logo y enlaces -->
         <nav class="navbar">
-            <!-- Contenedor del logo -->
             <div class="logo">
-                <!-- Texto que representa la marca HAZE -->
-                <span>HAZE</span>
+                <a href="#home">
+                    <span class="logo-letter">H</span>
+                    <span class="logo-letter">A</span>
+                    <span class="logo-letter">Z</span>
+                    <span class="logo-letter">E</span>
+                </a>
             </div>
-            <!-- Lista de enlaces del menú -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
-                <!-- Enlace a la sección de bienvenida -->
-                <li><a href="#home" class="nav-link">HOME</a></li>
-                <!-- Enlace a la sección sobre ti -->
-                <li><a href="#about" class="nav-link">Rincón Personal</a></li>
-                <!-- Enlace a la sección de portafolio -->
-                <li><a href="#portfolio" class="nav-link">PORTAFOLIO</a></li>
-                <!-- Enlace a la sección de servicios -->
+                <li><a href="#home" class="nav-link">INICIO</a></li>
                 <li><a href="#services" class="nav-link">SERVICIOS</a></li>
-                <!-- Enlace a la sección de contacto -->
+                <li><a href="#portfolio" class="nav-link">PORTAFOLIO</a></li>
                 <li><a href="#contact" class="nav-link">CONTACTO</a></li>
+                <li><a href="#about" class="nav-link">SOBRE MI</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Contenido principal con todas las secciones -->
-    <main>
-        <!-- Sección de bienvenida con título, video, imagen y texto -->
+    <main class="sections-container">
         <section id="home" class="section">
-            <!-- Título principal -->
             <h1>"THE WORLD IS YOURS", ME LO DIJO NAS Y LE CREÍ...</h1>
-            <!-- Video de YouTube -->
-            <iframe class="video" src="https://www.youtube.com/embed/UtF6Jej8yb4" frameborder="0" allowfullscreen></iframe>
-            <!-- Imagen de la máscara -->
-            <img class="mask-image" src="./anon_gang.png" alt="Máscara de huellas dactilares">
-            <!-- Texto debajo de la imagen -->
+            <iframe class="video" src="https://www.youtube.com/embed/e5PnuIRnJW8" frameborder="0" allowfullscreen></iframe>
+            <img class="mask-image" src="./anon_gang.png" alt="Máscara con huellas dactilares">
             <p class="hustle-text">IN HUSTLE WE TRUST</p>
         </section>
 
-        <!-- Sección sobre ti con descripción y lista de herramientas -->
-        <section id="about" class="section">
-            <!-- Título de la sección -->
-            <h1>Mi Rincón Personal</h1>
-            <!-- Párrafo con información -->
-            <p>Soy Víctor, conocido como HAZE. Este rincón es donde guardo mis pensamientos y pasiones. Me dedico a la creación digital, buscando siempre formas de innovar y conectar.</p>
-            <!-- Contenedor para las herramientas -->
-            <div class="tools">
-                <!-- Herramienta 1 -->
-                <div class="tool">Imaginación</div>
-                <!-- Herramienta 2 -->
-                <div class="tool">Curiosidad</div>
-                <!-- Herramienta 3 -->
-                <div class="tool">Creatividad</div>
-            </div>
-        </section>
-
-        <!-- Sección de portafolio representada como un escritorio -->
-        <section id="portfolio" class="section">
-            <!-- Título de la sección -->
-            <h1>Mi Escritorio</h1>
-            <!-- Párrafo introductorio -->
-            <p>Este es mi escritorio, donde trabajo en mis creaciones. Echa un vistazo a lo que he estado haciendo.</p>
-            <!-- Contenedor para los elementos del escritorio -->
-            <div class="desk-items">
-                <!-- Elemento 1 -->
-                <div class="desk-item">
-                    <!-- Título del elemento -->
-                    <h3>Creación 1</h3>
-                    <!-- Descripción -->
-                    <p>Un proyecto que refleja mi pasión por la creatividad.</p>
-                </div>
-                <!-- Elemento 2 -->
-                <div class="desk-item">
-                    <h3>Creación 2</h3>
-                    <p>Otro trabajo que me desafió a innovar.</p>
-                </div>
-                <!-- Elemento 3 -->
-                <div class="desk-item">
-                    <h3>Creación 3</h3>
-                    <p>Un experimento que me llevó a nuevas ideas.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de servicios representada como una estantería -->
         <section id="services" class="section">
-            <!-- Título de la sección -->
-            <h1>Mi Estantería</h1>
-            <!-- Párrafo introductorio -->
-            <p>En mi estantería guardo lo que puedo ofrecerte. Cada "libro" es una solución que puedo brindarte.</p>
-            <!-- Contenedor para los elementos de la estantería -->
+            <h1>Servicios Digitales de HAZE</h1>
+            <p>Transformo tus ideas en soluciones digitales prácticas y accesibles. Desde diseño web hasta gestión de redes, aquí tienes lo que ofrezco:</p>
             <div class="shelf-items">
-                <!-- Elemento 1 -->
                 <div class="shelf-item">
-                    <!-- Título del elemento -->
-                    <h3>Libro 1</h3>
-                    <!-- Descripción -->
-                    <p>Una solución para tus ideas creativas.</p>
+                    <h3>Diseño Web Personalizado</h3>
+                    <p>Creamos sitios web únicos, responsivos y optimizados para SEO, perfectos para marcas personales o negocios pequeños. Incluye diseño UX/UI y hasta 5 páginas.</p>
+                    <p><strong>Precio estimado:</strong> $150 - $300 USD</p>
                 </div>
-                <!-- Elemento 2 -->
                 <div class="shelf-item">
-                    <h3>Libro 2</h3>
-                    <p>Un enfoque innovador para tus proyectos.</p>
+                    <h3>Gestión de Redes Sociales</h3>
+                    <p>Planificación y creación de contenido para Instagram, Twitter y TikTok. Incluye 8 publicaciones mensuales y análisis de engagement.</p>
+                    <p><strong>Precio estimado:</strong> $100 - $200 USD/mes</p>
                 </div>
-                <!-- Elemento 3 -->
                 <div class="shelf-item">
-                    <h3>Libro 3</h3>
-                    <p>Apoyo para llevar tus visiones a la realidad.</p>
+                    <h3>Branding Digital</h3>
+                    <p>Desarrollo de identidad visual: logo, paleta de colores y tipografía. Ideal para startups que quieren destacar.</p>
+                    <p><strong>Precio estimado:</strong> $80 - $150 USD</p>
                 </div>
             </div>
         </section>
 
-        <!-- Sección de contacto representada como un buzón -->
+        <section id="portfolio" class="section">
+            <h1>Mi Escritorio</h1>
+            <p>Este espacio está reservado para mis proyectos futuros. ¡Vuelve pronto para ver mis creaciones!</p>
+        </section>
+
         <section id="contact" class="section">
-            <!-- Título de la sección -->
             <h1>Mi Buzón</h1>
-            <!-- Párrafo introductorio -->
             <p>¿Quieres dejarme un mensaje? Usa mi buzón y te responderé pronto.</p>
-            <!-- Formulario para enviar mensajes -->
-            <form action="https://formsubmit.co/tu@email.com" method="POST" class="mailbox">
-                <!-- Campo para el nombre -->
+            <form action="https://formsubmit.co/innovartechs@gmail.com" method="POST" class="mailbox">
                 <input type="text" name="name" placeholder="Tu Nombre" required>
-                <!-- Campo para el correo -->
                 <input type="email" name="email" placeholder="Tu Correo" required>
-                <!-- Área de texto para el mensaje -->
                 <textarea name="message" placeholder="Tu Mensaje" required></textarea>
-                <!-- Botón para enviar -->
-                <button type="submit" class="submit">Dejar Mensaje</button>
+                <button type="submit" class="submit">Enviar Mensaje</button>
             </form>
+        </section>
+
+        <section id="about" class="section">
+            <h1>Sobre Mí</h1>
+            <p>¡Hola! Soy Víctor, pero puedes decirme HAZE-SAMA, soy un creador digital con un pie en la innovación y otro en la conexión humana. Mi misión es construir soluciones digitales que no solo funcionen, sino que inspiren. Desde el diseño web hasta el branding, cada proyecto es un paso hacia un mundo más creativo y accesible. Me guían la curiosidad y la resiliencia, y creo en el poder de trabajar juntos para transformar ideas en realidad. ¿Te sumas?</p>
+            <div class="linktree">
+                <a href="https://github.com/haze-sama" class="linktree-btn">GitHub</a>
+                <a href="https://twitter.com/haze_sama" class="linktree-btn">Twitter</a>
+                <a href="https://linkedin.com/in/victor-haze" class="linktree-btn">LinkedIn</a>
+                <a href="mailto:tu@email.com" class="linktree-btn">Correo</a>
+            </div>
         </section>
     </main>
 
-    <!-- Footer fijo con información -->
     <footer class="footer">
-        <!-- Texto del footer -->
         <p>© BY VICTOR WENDEHAKE</p>
     </footer>
 
-    <!-- Enlaza el archivo JavaScript con ruta relativa explícita -->
     <script src="./script.js"></script>
 </body>
 </html>
