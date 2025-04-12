@@ -37,7 +37,7 @@ body {
     width: 100%;
     height: var(--header-height);
     background-color: var(--color-fondo);
-    z-index: 1000; /* Asegura que esté encima */
+    z-index: 1000;
 }
 
 /* Barra de navegación */
@@ -71,9 +71,9 @@ body {
 .letter-z { animation-delay: 0.4s; }
 .letter-e { animation-delay: 0.6s; }
 
-/* Animación de opacidad en forma de onda */
+/* Animación de opacidad más notable */
 @keyframes waveOpacity {
-    0%, 100% { opacity: 0.5; }
+    0%, 100% { opacity: 0.3; } /* Más baja para mayor contraste */
     50% { opacity: 1; }
 }
 
@@ -131,12 +131,11 @@ body {
 
 /* Contenedor de secciones */
 .sections-container {
-    margin-top: var(--header-height); /* Espacio para el header */
-    margin-bottom: var(--footer-height); /* Espacio para el footer */
-    min-height: calc(100vh - var(--header-height) - var(--footer-height)); /* Altura entre header y footer */
+    margin-top: var(--header-height);
+    margin-bottom: var(--footer-height);
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
     display: flex;
     width: 500%;
-    height: 100%;
     overflow-x: hidden;
     transition: transform 0.5s ease;
 }
@@ -150,8 +149,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 50px;
-    overflow-y: auto;
+    padding: 20px; /* Reducido para mejor control */
 }
 
 /* Estilos para la sección Home */
@@ -169,27 +167,27 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    gap: 20px;
+    padding: 10px; /* Ajustado */
+    gap: 15px;
 }
 
 /* Títulos */
 .section h1 {
     font-size: var(--tamano-titulo);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 /* Párrafos */
 .section p {
     font-size: var(--tamano-texto);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 /* Video de YouTube */
 .video {
     width: 100%;
     max-width: 400px;
-    aspect-ratio: 16 / 9; /* Relación de aspecto fija */
+    aspect-ratio: 16 / 9;
     border: none;
 }
 
@@ -197,7 +195,7 @@ body {
 .mask-image {
     width: 100%;
     max-width: 200px;
-    aspect-ratio: 1 / 1; /* Relación de aspecto cuadrada */
+    aspect-ratio: 1 / 1;
 }
 
 /* Eslogan en Home */
@@ -236,38 +234,69 @@ body {
     50% { opacity: 0.9; }
 }
 
+/* Contenedor de controles del carrusel de servicios */
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+/* Botones del carrusel */
+.carousel-btn {
+    background-color: var(--color-acento);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.carousel-btn:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.carousel-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
 /* Carrusel de servicios */
 .shelf-items {
     display: flex;
     width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 20px;
-    margin-top: 20px;
-    padding-bottom: 10px;
-    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+    gap: 15px;
+    padding: 10px 0;
+    scrollbar-width: none;
 }
 
 .shelf-items::-webkit-scrollbar {
-    display: none; /* Oculta scrollbar en Chrome/Safari */
+    display: none;
 }
 
 .shelf-item {
-    flex: 0 0 200px; /* Tamaño fijo */
+    flex: 0 0 30%; /* Porcentual para adaptarse */
+    max-width: 200px;
     background-color: var(--color-secundario);
-    padding: 20px;
+    padding: 15px;
     border-radius: 5px;
     text-align: center;
     scroll-snap-align: start;
 }
 
 .shelf-item h3 {
-    font-size: 20px;
+    font-size: clamp(16px, 5vw, 18px); /* Adaptable */
     margin-bottom: 10px;
 }
 
 .shelf-item p {
-    font-size: 14px;
+    font-size: clamp(12px, 4vw, 14px); /* Adaptable */
 }
 
 /* Carrusel de portafolio */
@@ -305,7 +334,7 @@ body {
 
 .portfolio-media {
     width: 100%;
-    aspect-ratio: 1 / 1; /* Imagen cuadrada por defecto */
+    aspect-ratio: 1 / 1;
     border-radius: 5px;
 }
 
@@ -321,7 +350,7 @@ body {
 .progress-line {
     height: 100%;
     background-color: var(--color-acento);
-    width: 100%; /* Línea base */
+    width: 100%;
 }
 
 .progress-circle {
@@ -380,10 +409,11 @@ body {
 /* Linktree en Sobre Mí */
 .linktree {
     display: flex;
-    flex-direction: row; /* Horizontal */
+    flex-direction: row;
     gap: 10px;
     margin-top: 20px;
-    flex-wrap: wrap; /* Permite ajustar en pantallas pequeñas */
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .linktree-btn {
@@ -415,8 +445,8 @@ body {
 
 .footer-text {
     font-size: 14px;
-    color: var(--color-acento); /* Amarillo */
-    animation: waveOpacity var(--logo-anim-duration) infinite ease-in-out; /* Misma animación que el logo */
+    color: var(--color-acento);
+    animation: waveOpacity var(--logo-anim-duration) infinite ease-in-out;
 }
 
 /* Responsividad */
@@ -465,6 +495,7 @@ body {
 
     .section {
         width: 100%;
+        padding: 10px; /* Reducido en móviles */
     }
 
     /* Home en móviles */
@@ -475,6 +506,7 @@ body {
     .home-left,
     .home-right {
         width: 100%;
+        padding: 5px;
     }
 
     /* Escalar video e imagen */
@@ -492,6 +524,11 @@ body {
     /* Ocultar botón en móviles */
     .next-section-btn {
         display: none;
+    }
+
+    /* Servicios en móviles */
+    .shelf-item {
+        flex: 0 0 80%; /* Más ancho en móviles */
     }
 
     /* Linktree apilado en móviles */
