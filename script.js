@@ -199,7 +199,21 @@ if (portfolioCarousel && portfolioPrevBtn && portfolioNextBtn && portfolioProgre
     };
 
     portfolioPrevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
+        if (currentIndex === 0) {
+            // Ir a #about
+            const aboutSection = document.getElementById('about');
+            const sectionIndex = 2;
+
+            if (window.innerWidth > 768) {
+                sectionsContainer.style.transform = `translateX(-${sectionIndex * 20}%)`;
+            } else {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Actualizar enlace activo
+            navLinks.forEach(l => l.classList.remove('active'));
+            document.querySelector('.nav-link[href="#about"]').classList.add('active');
+        } else {
             currentIndex--;
             portfolioCarousel.scrollTo({
                 left: currentIndex * portfolioCarousel.offsetWidth,
@@ -210,7 +224,21 @@ if (portfolioCarousel && portfolioPrevBtn && portfolioNextBtn && portfolioProgre
     });
 
     portfolioNextBtn.addEventListener('click', () => {
-        if (currentIndex < totalItems - 1) {
+        if (currentIndex === totalItems - 1) {
+            // Ir a #contact
+            const contactSection = document.getElementById('contact');
+            const sectionIndex = 4;
+
+            if (window.innerWidth > 768) {
+                sectionsContainer.style.transform = `translateX(-${sectionIndex * 20}%)`;
+            } else {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Actualizar enlace activo
+            navLinks.forEach(l => l.classList.remove('active'));
+            document.querySelector('.nav-link[href="#contact"]').classList.add('active');
+        } else {
             currentIndex++;
             portfolioCarousel.scrollTo({
                 left: currentIndex * portfolioCarousel.offsetWidth,
