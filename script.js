@@ -17,23 +17,6 @@ const aboutNextBtn = document.querySelector('#about .next-section-btn');
 const contactPrevBtn = document.querySelector('#contact .prev-section-btn');
 const whatsappBtn = document.querySelector('.whatsapp-btn');
 
-// Crear cursor personalizado
-const cursor = document.createElement('div');
-cursor.classList.add('cursor');
-document.body.appendChild(cursor);
-
-// Mover cursor con el ratón
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
-});
-
-// Añadir efecto glow al mover
-document.addEventListener('mousemove', () => {
-    cursor.classList.add('glow');
-    setTimeout(() => cursor.classList.remove('glow'), 200);
-});
-
 // Mostrar botón de WhatsApp tras 5 segundos
 if (whatsappBtn) {
     setTimeout(() => {
