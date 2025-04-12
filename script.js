@@ -14,7 +14,6 @@ const portfolioPrevBtn = document.querySelector('#portfolio .prev-btn');
 const portfolioNextBtn = document.querySelector('#portfolio .next-btn');
 const aboutPrevBtn = document.querySelector('#about .prev-section-btn');
 const aboutNextBtn = document.querySelector('#about .next-section-btn');
-const contactPrevBtn = document.querySelector('#contact .prev-section-btn');
 const whatsappBtn = document.querySelector('.whatsapp-btn');
 
 // Mostrar botón de WhatsApp tras 5 segundos
@@ -93,24 +92,6 @@ if (aboutPrevBtn) {
 
 if (aboutNextBtn) {
     aboutNextBtn.addEventListener('click', () => {
-        const portfolioSection = document.getElementById('portfolio');
-        const sectionIndex = 3;
-
-        if (window.innerWidth > 768) {
-            sectionsContainer.style.transform = `translateX(-${sectionIndex * 20}%)`;
-        } else {
-            portfolioSection.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Actualizar enlace activo
-        navLinks.forEach(l => l.classList.remove('active'));
-        document.querySelector('.nav-link[href="#portfolio"]').classList.add('active');
-    });
-}
-
-// Botón de navegación en #contact
-if (contactPrevBtn) {
-    contactPrevBtn.addEventListener('click', () => {
         const portfolioSection = document.getElementById('portfolio');
         const sectionIndex = 3;
 
