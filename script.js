@@ -6,9 +6,12 @@ const navLinksContainer = document.querySelector('.nav-links');
 const nextSectionBtn = document.querySelector('.next-section-btn');
 const servicesCarousel = document.querySelector('.shelf-items');
 const portfolioCarousel = document.querySelector('.carousel-items');
-const progressCircle = document.querySelector('.progress-circle');
-const prevServiceBtn = document.querySelector('.prev-btn');
-const nextServiceBtn = document.querySelector('.next-btn');
+const servicesProgressCircle = document.querySelector('#services .progress-circle');
+const portfolioProgressCircle = document.querySelector('#portfolio .progress-circle');
+const servicesPrevBtn = document.querySelector('#services .prev-btn');
+const servicesNextBtn = document.querySelector('#services .next-btn');
+const portfolioPrevBtn = document.querySelector('#portfolio .prev-btn');
+const portfolioNextBtn = document.querySelector('#portfolio .next-btn');
 
 // Alternar menú hamburguesa
 hamburger.addEventListener('click', () => {
@@ -60,46 +63,84 @@ if (nextSectionBtn) {
 }
 
 // Navegación del carrusel de servicios
-if (servicesCarousel && prevServiceBtn && nextServiceBtn) {
+if (servicesCarousel && servicesPrevBtn && servicesNextBtn && servicesProgressCircle) {
     const items = servicesCarousel.querySelectorAll('.shelf-item');
+    const totalItems = items.length;
     let currentIndex = 0;
 
-    prevServiceBtn.addEventListener('click', () => {
+    const updateProgress = () => {
+        const progress = (currentIndex / (totalItems - 1)) * 100;
+        servicesProgressCircle.style.left = `${progress}%`;
+    };
+
+    servicesPrevBtn.addEventListener('click', () => {
         if (currentIndex > 0) {
             currentIndex--;
-            const itemWidth = items[0].offsetWidth + 15; // Ancho + gap
             servicesCarousel.scrollTo({
-                left: currentIndex * itemWidth,
+                left: currentIndex * servicesCarousel.offsetWidth,
                 behavior: 'smooth'
             });
+            updateProgress();
         }
     });
 
-    nextServiceBtn.addEventListener('click', () => {
-        if (currentIndex < items.length - 1) {
+    servicesNextBtn.addEventListener('click', () => {
+        if (currentIndex < totalItems - 1) {
             currentIndex++;
-            const itemWidth = items[0].offsetWidth + 15;
             servicesCarousel.scrollTo({
-                left: currentIndex * itemWidth,
+                left: currentIndex * servicesCarousel.offsetWidth,
                 behavior: 'smooth'
             });
+            updateProgress();
         }
+    });
+
+    servicesCarousel.addEventListener('scroll', () => {
+        const scrollLeft = servicesCarousel.scrollLeft;
+        const itemWidth = servicesCarousel.offsetWidth;
+        currentIndex = Math.round(scrollLeft / itemWidth);
+        updateProgress();
     });
 }
 
-// Manejar carrusel de portafolio y barra de progreso
-if (portfolioCarousel && progressCircle) {
+// Navegación del carrusel de portafolio
+if (portfolioCarousel && portfolioPrevBtn && portfolioNextBtn && portfolioProgressCircle) {
     const items = portfolioCarousel.querySelectorAll('.portfolio-item');
     const totalItems = items.length;
+    let currentIndex = 0;
+
+    const updateProgress = () => {
+        const progress = (currentIndex / (totalItems - 1)) * 100;
+        portfolioProgressCircle.style.left = `${progress}%`;
+    };
+
+    portfolioPrevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            portfolioCarousel.scrollTo({
+                left: currentIndex * portfolioCarousel.offsetWidth,
+                behavior: 'smooth'
+            });
+            updateProgress();
+        }
+    });
+
+    portfolioNextBtn.addEventListener('click', () => {
+        if (currentIndex < totalItems - 1) {
+            currentIndex++;
+            portfolioCarousel.scrollTo({
+                left: currentIndex * portfolioCarousel.offsetWidth,
+                behavior: 'smooth'
+            });
+            updateProgress();
+        }
+    });
 
     portfolioCarousel.addEventListener('scroll', () => {
         const scrollLeft = portfolioCarousel.scrollLeft;
-        const itemWidth = portfolioCarousel.scrollWidth / totalItems;
-        const currentIndex = Math.round(scrollLeft / itemWidth);
-        const progress = (currentIndex / (totalItems - 1)) * 100;
-
-        // Mover el círculo
-        progressCircle.style.left = `${progress}%`;
+        const itemWidth = portfolioCarousel.offsetWidth;
+        currentIndex = Math.round(scrollLeft / itemWidth);
+        updateProgress();
     });
 }
 
