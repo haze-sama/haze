@@ -7,6 +7,8 @@ const nextSectionBtn = document.querySelector('.next-section-btn');
 const servicesCarousel = document.querySelector('.shelf-items');
 const portfolioCarousel = document.querySelector('.carousel-items');
 const progressCircle = document.querySelector('.progress-circle');
+const prevServiceBtn = document.querySelector('.prev-btn');
+const nextServiceBtn = document.querySelector('.next-btn');
 
 // Alternar menú hamburguesa
 hamburger.addEventListener('click', () => {
@@ -57,6 +59,50 @@ if (nextSectionBtn) {
     });
 }
 
+// Navegación del carrusel de servicios
+if (servicesCarousel && prevServiceBtn && nextServiceBtn) {
+    const items = servicesCarousel.querySelectorAll('.shelf-item');
+    let currentIndex = 0;
+
+    prevServiceBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            const itemWidth = items[0].offsetWidth + 15; // Ancho + gap
+            servicesCarousel.scrollTo({
+                left: currentIndex * itemWidth,
+                behavior: 'smooth'
+            });
+        }
+    });
+
+    nextServiceBtn.addEventListener('click', () => {
+        if (currentIndex < items.length - 1) {
+            currentIndex++;
+            const itemWidth = items[0].offsetWidth + 15;
+            servicesCarousel.scrollTo({
+                left: currentIndex * itemWidth,
+                behavior: 'smooth'
+            });
+        }
+    });
+}
+
+// Manejar carrusel de portafolio y barra de progreso
+if (portfolioCarousel && progressCircle) {
+    const items = portfolioCarousel.querySelectorAll('.portfolio-item');
+    const totalItems = items.length;
+
+    portfolioCarousel.addEventListener('scroll', () => {
+        const scrollLeft = portfolioCarousel.scrollLeft;
+        const itemWidth = portfolioCarousel.scrollWidth / totalItems;
+        const currentIndex = Math.round(scrollLeft / itemWidth);
+        const progress = (currentIndex / (totalItems - 1)) * 100;
+
+        // Mover el círculo
+        progressCircle.style.left = `${progress}%`;
+    });
+}
+
 // Actualizar enlace activo al hacer scroll en móviles
 window.addEventListener('scroll', () => {
     if (window.innerWidth <= 768) {
@@ -81,19 +127,3 @@ window.addEventListener('load', () => {
         document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
     }
 });
-
-// Manejar carrusel de portafolio y barra de progreso
-if (portfolioCarousel && progressCircle) {
-    const items = portfolioCarousel.querySelectorAll('.portfolio-item');
-    const totalItems = items.length;
-
-    portfolioCarousel.addEventListener('scroll', () => {
-        const scrollLeft = portfolioCarousel.scrollLeft;
-        const itemWidth = portfolioCarousel.scrollWidth / totalItems;
-        const currentIndex = Math.round(scrollLeft / itemWidth);
-        const progress = (currentIndex / (totalItems - 1)) * 100;
-
-        // Mover el círculo
-        progressCircle.style.left = `${progress}%`;
-    });
-}
