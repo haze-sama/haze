@@ -73,7 +73,7 @@ body {
 
 /* Animación de opacidad más notable */
 @keyframes waveOpacity {
-    0%, 100% { opacity: 0.3; } /* Más baja para mayor contraste */
+    0%, 100% { opacity: 0.3; }
     50% { opacity: 1; }
 }
 
@@ -149,7 +149,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px; /* Reducido para mejor control */
+    padding: 20px;
 }
 
 /* Estilos para la sección Home */
@@ -167,7 +167,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px; /* Ajustado */
+    padding: 10px;
     gap: 15px;
 }
 
@@ -234,14 +234,19 @@ body {
     50% { opacity: 0.9; }
 }
 
-/* Contenedor de controles del carrusel de servicios */
-.carousel-controls {
-    display: flex;
-    align-items: center;
+/* Contenedor del carrusel */
+.carousel-wrapper {
     width: 100%;
     max-width: 600px;
     margin-top: 20px;
-    gap: 10px;
+}
+
+/* Contenedor de controles del carrusel */
+.carousel-controls {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 /* Botones del carrusel */
@@ -253,10 +258,14 @@ body {
     cursor: pointer;
     opacity: 0.7;
     transition: transform 0.3s, opacity 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
 .carousel-btn:hover {
-    transform: scale(1.2);
+    transform: translateY(-50%) scale(1.2);
     opacity: 1;
 }
 
@@ -265,70 +274,62 @@ body {
     height: 24px;
 }
 
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
 /* Carrusel de servicios */
 .shelf-items {
     display: flex;
     width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden; /* Oculta tarjetas no visibles */
     scroll-snap-type: x mandatory;
     gap: 15px;
     padding: 10px 0;
-    scrollbar-width: none;
-}
-
-.shelf-items::-webkit-scrollbar {
-    display: none;
 }
 
 .shelf-item {
-    flex: 0 0 30%; /* Porcentual para adaptarse */
-    max-width: 200px;
-    background-color: var(--color-secundario);
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    scroll-snap-align: start;
-}
-
-.shelf-item h3 {
-    font-size: clamp(16px, 5vw, 18px); /* Adaptable */
-    margin-bottom: 10px;
-}
-
-.shelf-item p {
-    font-size: clamp(12px, 4vw, 14px); /* Adaptable */
-}
-
-/* Carrusel de portafolio */
-.portfolio-carousel {
-    width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
-}
-
-.carousel-items {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    scrollbar-width: none;
-}
-
-.carousel-items::-webkit-scrollbar {
-    display: none;
-}
-
-.portfolio-item {
-    flex: 0 0 100%;
+    flex: 0 0 100%; /* Una tarjeta a la vez */
+    max-width: calc(100% - 60px); /* Márgenes laterales */
+    margin: 0 30px; /* Centrado con márgenes */
     background-color: var(--color-secundario);
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+}
+
+.shelf-item h3 {
+    font-size: clamp(18px, 5vw, 20px);
+    margin-bottom: 10px;
+}
+
+.shelf-item p {
+    font-size: clamp(14px, 4vw, 16px);
+}
+
+/* Carrusel de portafolio */
+.carousel-items {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.portfolio-item {
+    flex: 0 0 100%;
+    max-width: calc(100% - 60px);
+    margin: 0 30px;
+    background-color: var(--color-secundario);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    scroll-snap-align: center;
 }
 
 .portfolio-item h3 {
-    font-size: 20px;
+    font-size: clamp(18px, 5vw, 20px);
     margin-bottom: 10px;
 }
 
@@ -338,10 +339,10 @@ body {
     border-radius: 5px;
 }
 
-/* Barra de progreso del carrusel */
+/* Barra de progreso */
 .carousel-progress {
     position: relative;
-    margin-top: 10px;
+    margin: 10px 0;
     height: 4px;
     background-color: var(--color-input);
     border-radius: 2px;
@@ -495,7 +496,7 @@ body {
 
     .section {
         width: 100%;
-        padding: 10px; /* Reducido en móviles */
+        padding: 10px;
     }
 
     /* Home en móviles */
@@ -526,10 +527,19 @@ body {
         display: none;
     }
 
-    /* Servicios en móviles */
-    .shelf-item {
-        flex: 0 0 80%; /* Más ancho en móviles */
+    /* Carruseles en móviles */
+    .shelf-item,
+    .portfolio-item {
+        max-width: calc(100% - 20px); /* Márgenes más pequeños */
+        margin: 0 10px;
     }
+
+    .carousel-btn {
+        padding: 8px;
+    }
+
+    .prev-btn { left: 5px; }
+    .next-btn { right: 5px; }
 
     /* Linktree apilado en móviles */
     .linktree {
