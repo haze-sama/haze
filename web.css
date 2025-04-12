@@ -18,6 +18,8 @@
     --tamano-logo: 48px; /* Tamaño de letras del logo */
     --tamano-titulo: 24px; /* Tamaño de títulos h1 */
     --tamano-texto: 16px; /* Tamaño de párrafos */
+    --logo-anim-duration: 2s; /* Duración de la animación del logo */
+    --btn-anim-duration: 1s; /* Duración del titileo del botón */
 }
 
 /* Estilos del cuerpo */
@@ -50,11 +52,26 @@ body {
     display: flex; /* Alinea las letras horizontalmente */
 }
 
-/* Colores individuales para cada letra del logo */
-.letter-h { color: var(--color-acento); } /* Amarillo para H */
-.letter-a { color: #0ff; } /* Cian para A */
-.letter-z { color: #f0f; } /* Magenta para Z */
-.letter-e { color: #0f0; } /* Verde para E */
+/* Colores y animación para cada letra del logo */
+.letter-h,
+.letter-a,
+.letter-z,
+.letter-e {
+    color: var(--color-acento); /* Amarillo para todas */
+    animation: waveOpacity var(--logo-anim-duration) infinite ease-in-out;
+}
+
+/* Retrasos para crear el efecto de onda */
+.letter-h { animation-delay: 0s; }
+.letter-a { animation-delay: 0.2s; }
+.letter-z { animation-delay: 0.4s; }
+.letter-e { animation-delay: 0.6s; }
+
+/* Animación de opacidad en forma de onda */
+@keyframes waveOpacity {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
 
 /* Menú hamburguesa */
 .hamburger {
@@ -191,16 +208,25 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s;
+    opacity: 0.7; /* Opacidad inicial */
+    transition: transform 0.3s, opacity 0.3s; /* Transiciones suaves */
+    animation: flickerOpacity var(--btn-anim-duration) infinite ease-in-out; /* Titileo */
 }
 
 .next-section-btn:hover {
-    background-color: var(--color-hover);
+    transform: scale(1.2); /* Agrandarse en hover */
+    opacity: 1; /* Opacidad completa */
 }
 
 .next-section-btn svg {
     width: 24px;
     height: 24px;
+}
+
+/* Animación de titileo para el botón */
+@keyframes flickerOpacity {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 0.9; }
 }
 
 /* Servicios */
