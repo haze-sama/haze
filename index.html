@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./web.css">
 </head>
 <body>
+    <div class="background-flash"></div>
     <div class="texture-overlay"></div>
     <header class="header">
         <nav class="navbar">
@@ -111,52 +112,7 @@
             </div>
         </section>
 
-        <section id="portfolio" class="section">
-            <h1>Mi Portafolio</h1>
-            <p>Mis proyectos más recientes, listos para inspirarte:</p>
-            <div class="carousel-wrapper">
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev-btn" aria-label="Anterior proyecto">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2">
-                            <path d="M19 12H5M12 19l-7-7 7-7"/>
-                        </svg>
-                    </button>
-                    <div class="carousel-items">
-                        <div class="portfolio-item">
-                            <h3>Landing Page para Startup</h3>
-                            <img src="./placeholder.png" alt="Landing Page" class="portfolio-media">
-                            <p>Una página de aterrizaje dinámica para una startup tecnológica, con diseño responsivo y animaciones fluidas.</p>
-                        </div>
-                        <div class="portfolio-item">
-                            <h3>Campaña de Redes Sociales</h3>
-                            <img src="./placeholder.png" alt="Campaña Social" class="portfolio-media">
-                            <p>Estrategia de contenido para Instagram y Twitter, aumentando el engagement en un 40%.</p>
-                        </div>
-                        <div class="portfolio-item">
-                            <h3>Identidad de Marca</h3>
-                            <img src="./placeholder.png" alt="Branding" class="portfolio-media">
-                            <p>Diseño de logo y elementos visuales para una marca de moda urbana.</p>
-                        </div>
-                    </div>
-                    <button class="carousel-btn next-btn" aria-label="Siguiente proyecto">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </button>
-                </div>
-                <div class="carousel-progress">
-                    <div class="progress-line"></div>
-                    <div class="progress-circle"></div>
-                </div>
-            </div>
-        </section>
-
         <section id="contact" class="section">
-            <button class="section-nav-btn prev-section-btn" aria-label="Ir a Portafolio">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-            </button>
             <h1>Contáctame</h1>
             <p>¿Quieres dejarme un mensaje? Usa este formulario y te responderé pronto 😊</p>
             <form action="https://formsubmit.co/innovartechs@gmail.com" method="POST" class="mailbox">
@@ -165,13 +121,20 @@
                 <textarea name="message" placeholder="Tu Mensaje" required></textarea>
                 <button type="submit" class="submit">Dejar Mensaje</button>
             </form>
+            <button class="section-nav-btn prev-section-btn" aria-label="Ir a Portafolio">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+            </button>
         </section>
     </main>
 
     <footer class="footer">
-        <a href="https://wa.me/1234567890" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
-            <img src="./whatsapp.png" alt="WhatsApp">
-        </a>
+        <div class="whatsapp-container">
+            <a href="https://wa.me/1234567890" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+                <img src="./whatsapp.png" alt="WhatsApp">
+            </a>
+        </div>
         <p class="footer-text">© BY WENDEHAKE</p>
     </footer>
 
