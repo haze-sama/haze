@@ -3,6 +3,7 @@ const sectionsContainer = document.querySelector('.sections-container');
 const navLinks = document.querySelectorAll('.nav-link');
 const hamburger = document.querySelector('.hamburger');
 const navLinksContainer = document.querySelector('.nav-links');
+const nextSectionBtn = document.querySelector('.next-section-btn');
 
 // Alternar menú hamburguesa
 hamburger.addEventListener('click', () => {
@@ -34,6 +35,24 @@ navLinks.forEach(link => {
         link.classList.add('active');
     });
 });
+
+// Botón para ir a la siguiente sección
+if (nextSectionBtn) {
+    nextSectionBtn.addEventListener('click', () => {
+        const servicesSection = document.getElementById('services');
+        const sectionIndex = 1; // Índice de #services
+
+        if (window.innerWidth > 768) {
+            sectionsContainer.style.transform = `translateX(-${sectionIndex * 20}%)`;
+        } else {
+            servicesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Actualizar enlace activo
+        navLinks.forEach(l => l.classList.remove('active'));
+        document.querySelector('.nav-link[href="#services"]').classList.add('active');
+    });
+}
 
 // Actualizar enlace activo al hacer scroll en móviles
 window.addEventListener('scroll', () => {
