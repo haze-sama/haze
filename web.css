@@ -15,7 +15,7 @@
     --color-input: #444; /* Gris claro para inputs */
     --color-placeholder: #aaa; /* Gris para placeholders */
     --color-hover: #cc0; /* Amarillo oscuro para hover */
-    --tamano-logo: 60px; /* Logo tamaño */
+    --tamano-logo: 80px; /* Logo más grande */
     --tamano-titulo: 24px; /* Tamaño de títulos h1 */
     --tamano-texto: 16px; /* Tamaño de párrafos */
     --logo-anim-duration: 2s; /* Duración de la animación del logo */
@@ -29,7 +29,7 @@ body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
     position: relative;
-    cursor: auto; /* Cursor nativo */
+    cursor: auto;
 }
 
 /* Fondo sprite */
@@ -240,6 +240,10 @@ body::before {
     gap: 15px;
 }
 
+.home-right {
+    align-items: flex-start; /* Alinear imagen al borde superior */
+}
+
 /* Títulos */
 .section h1 {
     font-size: var(--tamano-titulo);
@@ -263,8 +267,9 @@ body::before {
 /* Imagen en Home */
 .mask-image {
     width: 300px;
-    height: 300px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
+    margin-top: 0;
 }
 
 /* Eslogan en Home */
@@ -303,7 +308,7 @@ body::before {
     50% { opacity: 0.9; }
 }
 
-/* Botones de navegación en #about y #contact */
+/* Botones de navegación en #about */
 .section-nav-btn {
     background-color: var(--color-acento);
     border: none;
@@ -337,14 +342,6 @@ body::before {
 
 #about .section-nav-btn.prev-section-btn { margin-left: 0; }
 #about .section-nav-btn.next-section-btn { margin-right: 0; }
-
-/* Botón en #contact */
-#contact .section-nav-btn.prev-section-btn {
-    position: fixed;
-    bottom: calc(var(--footer-height) + 10px);
-    left: 60px; /* Espacio para WhatsApp */
-    z-index: 1100;
-}
 
 /* Contenedor del carrusel */
 .carousel-wrapper {
@@ -427,6 +424,7 @@ body::before {
     scroll-snap-type: x mandatory;
     gap: 15px;
     padding: 10px 0;
+    visibility: visible; /* Asegurar visibilidad */
 }
 
 .portfolio-item {
@@ -451,6 +449,7 @@ body::before {
 
 .portfolio-media {
     width: 100%;
+    max-width: 300px;
     aspect-ratio: 1 / 1;
     border-radius: 5px;
 }
@@ -674,6 +673,10 @@ body::before {
         padding: 5px;
     }
 
+    .home-right {
+        align-items: center;
+    }
+
     /* Escalar video e imagen */
     .video {
         max-width: 100%;
@@ -683,7 +686,7 @@ body::before {
 
     .mask-image {
         width: 200px;
-        height: 200px;
+        height: auto;
     }
 
     /* Ocultar botón en móviles */
@@ -708,7 +711,7 @@ body::before {
     .prev-btn { left: -15px; }
     .next-btn { right: -15px; }
 
-    /* Botones de #about y #contact en móviles */
+    /* Botones de #about en móviles */
     .section-nav-buttons {
         bottom: 10px;
         padding: 0 10px;
@@ -716,11 +719,6 @@ body::before {
 
     #about .section-nav-btn.prev-section-btn { margin-left: 0; }
     #about .section-nav-btn.next-section-btn { margin-right: 0; }
-
-    #contact .section-nav-btn.prev-section-btn {
-        bottom: calc(var(--footer-height) + 8px);
-        left: 50px;
-    }
 
     /* Linktree apilado en móviles */
     .linktree {
