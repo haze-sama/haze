@@ -45,7 +45,7 @@
             <!-- Video de YouTube -->
             <iframe class="video" src="https://www.youtube.com/embed/UtF6Jej8yb4" frameborder="0" allowfullscreen></iframe>
             <!-- Imagen de la máscara -->
-            <img class="mask-image" src="./mask-image.jpg" alt="Máscara con huellas dactilares">
+            <img class="mask-image" src="./anon_gang.png" alt="Máscara de huellas dactilares">
             <!-- Texto debajo de la imagen -->
             <p class="hustle-text">IN HUSTLE WE TRUST</p>
         </section>
@@ -130,13 +130,13 @@
             <!-- Párrafo introductorio -->
             <p>¿Quieres dejarme un mensaje? Usa mi buzón y te responderé pronto.</p>
             <!-- Formulario para enviar mensajes -->
-            <form class="mailbox">
+            <form action="https://formsubmit.co/tu@email.com" method="POST" class="mailbox">
                 <!-- Campo para el nombre -->
-                <input type="text" placeholder="Tu Nombre" required>
+                <input type="text" name="name" placeholder="Tu Nombre" required>
                 <!-- Campo para el correo -->
-                <input type="email" placeholder="Tu Correo" required>
+                <input type="email" name="email" placeholder="Tu Correo" required>
                 <!-- Área de texto para el mensaje -->
-                <textarea placeholder="Tu Mensaje" required></textarea>
+                <textarea name="message" placeholder="Tu Mensaje" required></textarea>
                 <!-- Botón para enviar -->
                 <button type="submit" class="submit">Dejar Mensaje</button>
             </form>
