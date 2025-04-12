@@ -1,8 +1,8 @@
 /* Reset y Estilos Generales */
 /* Elimina márgenes y paddings por defecto para un control total del diseño */
 * {
-    margin: 50px;
-    padding: 50px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box; /* Incluye padding y border en el ancho/alto */
     font-family: 'Arial', sans-serif; /* Define la fuente por defecto */
 }
