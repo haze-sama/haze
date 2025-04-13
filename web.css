@@ -229,19 +229,16 @@ body::before {
     align-items: stretch;
 }
 
+/* Contenedores izquierdo y derecho */
 .home-left,
 .home-right {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    gap: 5px;
-}
-
-.home-right {
-    align-items: flex-start; /* Alinear imagen al borde superior */
+    justify-content: center; /* Centrar verticalmente en su propio contenedor */
+    align-items: center; /* Centrar horizontalmente en su propio contenedor */
+    padding: 20px; /* Más espacio */
+    gap: 20px; /* Espaciado entre elementos */
 }
 
 /* Títulos */
@@ -267,15 +264,16 @@ body::before {
 /* Imagen en Home */
 .mask-image {
     width: auto;
-    height: 100%; /* Usar toda la altura del contenedor */
-    max-height: 300px; /* Limitar altura máxima */
-    object-fit: contain;
+    height: 100%; /* Usar toda la altura disponible */
+    max-height: 300px; /* Límite para no desbordar */
+    object-fit: contain; /* No recortar */
     margin-top: 0;
 }
 
 /* Eslogan en Home */
 .hustle-text {
     font-size: 22px;
+    margin: 10px 0; /* Espacio arriba y abajo */
 }
 
 /* Botón para siguiente sección */
@@ -482,7 +480,7 @@ body::before {
     transition: left 0.3s ease;
 }
 
-/* Formulario de contacto */
+/* Formme Formulario de contacto */
 .mailbox {
     display: flex;
     flex-direction: column;
@@ -671,7 +669,8 @@ body::before {
     .home-left,
     .home-right {
         width: 100%;
-        padding: 5px;
+        padding: 10px;
+        gap: 15px;
     }
 
     .home-right {
@@ -688,9 +687,14 @@ body::before {
     .mask-image {
         width: 200px;
         height: auto;
+        max-height: 200px;
     }
 
-    /* Ocultar botón en móviles */
+    .hustle-text {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
     .next-section-btn {
         display: none;
     }
