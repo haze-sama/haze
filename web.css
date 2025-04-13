@@ -236,8 +236,8 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    gap: 15px;
+    padding: 5px;
+    gap: 5px;
 }
 
 .home-right {
@@ -266,15 +266,16 @@ body::before {
 
 /* Imagen en Home */
 .mask-image {
-    width: 250px;
-    height: 300px;
+    width: auto;
+    height: 100%; /* Usar toda la altura del contenedor */
+    max-height: 300px; /* Limitar altura máxima */
     object-fit: contain;
     margin-top: 0;
 }
 
 /* Eslogan en Home */
 .hustle-text {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 /* Botón para siguiente sección */
