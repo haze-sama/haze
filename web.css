@@ -211,9 +211,9 @@ body::before {
 
 /* Contenedor de secciones */
 .sections-container {
-    margin-top: calc(var(--header-height) * 0.5); /* Reducir separación */
+    margin-top: calc(var(--header-height) * 0.1); /* Reducir separación */
     margin-bottom: var(--footer-height);
-    min-height: calc(100vh - (var(--header-height) * 0.5) - var(--footer-height));
+    min-height: calc(100vh - (var(--header-height) * 0.1) - var(--footer-height));
     display: flex;
     width: 500%;
     overflow-x: hidden;
