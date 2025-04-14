@@ -16,12 +16,12 @@
     --color-placeholder: #aaa; /* Gris para placeholders */
     --color-hover: #cc0; /* Amarillo oscuro para hover */
     --tamano-logo: 40px; /* Logo más grande */
-    --tamano-titulo: 24px; /* Tamaño de títulos h1 */
-    --tamano-texto: 16px; /* Tamaño de párrafos */
+    --tamano-titulo: 21px; /* Tamaño de títulos h1 */
+    --tamano-texto: 14px; /* Tamaño de párrafos */
     --logo-anim-duration: 2.4s; /* Duración de la animación del logo */
     --btn-anim-duration: 1s; /* Duración del titileo del botón */
     --header-height: 100px; /* Altura del header */
-    --footer-height: 20px; /* Altura del footer */
+    --footer-height: 50px; /* Altura del footer */
 }
 
 /* Estilos del cuerpo */
