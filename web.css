@@ -15,7 +15,7 @@
     --color-input: #444; /* Gris claro para inputs */
     --color-placeholder: #aaa; /* Gris para placeholders */
     --color-hover: #cc0; /* Amarillo oscuro para hover */
-    --tamano-logo: 50px; /* Logo más grande */
+    --tamano-logo: 40px; /* Logo más grande */
     --tamano-titulo: 24px; /* Tamaño de títulos h1 */
     --tamano-texto: 16px; /* Tamaño de párrafos */
     --logo-anim-duration: 2.4s; /* Duración de la animación del logo */
