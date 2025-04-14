@@ -108,6 +108,7 @@ body::before {
     font-size: var(--tamano-logo);
     font-weight: bold;
     display: flex;
+    gap: 2px; /* Espacio entre letras */
 }
 
 /* Colores y animación para cada letra del logo */
