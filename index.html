@@ -1,4 +1,4 @@
-uwu<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -72,20 +72,20 @@ uwu<!DOCTYPE html>
                         </svg>
                     </button>
                     <div class="shelf-items">
-                        <div class="shelf-item">
+                        <div class="shelf-item" data-image="./placeholder.png" data-text="Interfaces web responsivas con HTML, CSS y JavaScript, optimizadas para una experiencia de usuario fluida. Creo diseños que se adaptan a cualquier dispositivo, con animaciones suaves y un toque grunge-futurista único. Desde landing pages hasta aplicaciones interactivas, mi enfoque combina funcionalidad con estética rebelde.">
                             <h3>Desarrollo Frontend</h3>
-                            <img class="thumbnail" src="./placeholder.png" alt="Frontend" data-full="./placeholder.png">
-                            <p>Interfaces web responsivas con HTML, CSS y JavaScript, optimizadas para una experiencia de usuario fluida.</p>
+                            <img class="thumbnail" src="./placeholder.png" alt="Frontend">
+                            <p>Interfaces web responsivas con HTML, CSS y JavaScript.</p>
                         </div>
-                        <div class="shelf-item">
+                        <div class="shelf-item" data-image="./placeholder.png" data-text="Estrategias SEO y de contenido para redes sociales, diseñadas para maximizar alcance y engagement. Planifico campañas que conectan con tu audiencia, usando análisis de datos y tendencias actuales. Desde posts virales hasta anuncios optimizados, te ayudo a destacar en un mundo digital saturado.">
                             <h3>Marketing Digital</h3>
-                            <img class="thumbnail" src="./placeholder.png" alt="Marketing" data-full="./placeholder.png">
-                            <p>Estrategias SEO y de contenido para redes sociales, diseñadas para maximizar alcance y engagement.</p>
+                            <img class="thumbnail" src="./placeholder.png" alt="Marketing">
+                            <p>Estrategias SEO y de contenido para redes sociales.</p>
                         </div>
-                        <div class="shelf-item">
+                        <div class="shelf-item" data-image="./placeholder.png" data-text="Gráficos y animaciones personalizadas que refuerzan la identidad visual de marcas y proyectos. Diseño desde logos hasta banners animados, con un estilo que mezcla lo urbano y lo futurista. Cada pieza es única, creada para captar miradas y contar historias visuales impactantes.">
                             <h3>Diseño Gráfico</h3>
-                            <img class="thumbnail" src="./placeholder.png" alt="Diseño" data-full="./placeholder.png">
-                            <p>Gráficos y animaciones personalizadas que refuerzan la identidad visual de marcas y proyectos.</p>
+                            <img class="thumbnail" src="./placeholder.png" alt="Diseño">
+                            <p>Gráficos y animaciones personalizadas para marcas.</p>
                         </div>
                     </div>
                     <button class="carousel-btn next-btn" aria-label="Siguiente habilidad">
@@ -135,20 +135,20 @@ uwu<!DOCTYPE html>
                         </svg>
                     </button>
                     <div class="carousel-items">
-                        <div class="portfolio-item">
+                        <div class="portfolio-item" data-image="./placeholder.png" data-text="Una página de aterrizaje dinámica para una startup tecnológica, con diseño responsivo y animaciones fluidas. Implementé un diseño modular con CSS Grid y JavaScript, logrando tiempos de carga rápidos y una experiencia inmersiva. El cliente aumentó sus conversiones en un 25%.">
                             <h3>Landing Page para Startup</h3>
-                            <img class="thumbnail" src="./placeholder.png" alt="Landing Page" data-full="./placeholder.png">
-                            <p>Una página de aterrizaje dinámica para una startup tecnológica, con diseño responsivo y animaciones fluidas.</p>
+                            <img class="thumbnail" src="./placeholder.png" alt="Landing Page">
+                            <p>Una página de aterrizaje dinámica para una startup.</p>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="portfolio-item" data-image="./placeholder.png" data-text="Estrategia de contenido para Instagram y Twitter, aumentando el engagement en un 40%. Diseñé una serie de posts interactivos y videos cortos, usando herramientas como Canva y Adobe Premiere. La campaña alcanzó más de 10,000 interacciones en un mes.">
                             <h3>Campaña de Redes Sociales</h3>
-                            <img class="thumbnail" src="./placeholder.png" alt="Campaña Social" data-full="./placeholder.png">
-                            <p>Estrategia de contenido para Instagram y Twitter, aumentando el engagement en un 40%.</p>
+                            <img class="thumbnail" src="./placeholder.png" alt="Campaña Social">
+                            <p>Estrategia de contenido para Instagram y Twitter.</p>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="portfolio-item" data-image="./placeholder.png" data-text="Diseño de logo y elementos visuales para una marca de moda urbana. Creé una identidad visual con tipografías bold y paleta monocromática, inspirada en el streetwear. El proyecto incluyó mockups para ropa y packaging, destacando en ferias locales.">
                             <h3>Identidad de Marca</h3>
-                            <img class="thumbnail" src="./placeholder.png" alt="Branding" data-full="./placeholder.png">
-                            <p>Diseño de logo y elementos visuales para una marca de moda urbana.</p>
+                            <img class="thumbnail" src="./placeholder.png" alt="Branding">
+                            <p>Diseño de logo y elementos visuales para moda urbana.</p>
                         </div>
                     </div>
                     <button class="carousel-btn next-btn" aria-label="Siguiente proyecto">
@@ -181,10 +181,12 @@ uwu<!DOCTYPE html>
         <p class="footer-text">© BY WENDEHAKE</p>
     </footer>
 
-    <div class="popup" id="media-popup">
-        <span class="close-popup" id="close-popup">×</span>
-        <img class="popup-content" id="popup-image">
-        <video class="popup-content video" id="popup-video" controls style="display: none;"></video>
+    <div class="card-popup" id="card-popup">
+        <span class="card-popup-close" id="card-popup-close">×</span>
+        <div class="card-popup-content" id="card-popup-content">
+            <img class="card-popup-image" id="card-popup-image">
+            <div class="card-popup-text" id="card-popup-text"></div>
+        </div>
     </div>
 
     <script src="./script.js"></script>
