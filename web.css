@@ -15,12 +15,12 @@
     --color-input: #444; /* Gris claro para inputs */
     --color-placeholder: #aaa; /* Gris para placeholders */
     --color-hover: #cc0; /* Amarillo oscuro para hover */
-    --tamano-logo: 80px; /* Logo más grande */
+    --tamano-logo: 100px; /* Logo más grande */
     --tamano-titulo: 24px; /* Tamaño de títulos h1 */
     --tamano-texto: 16px; /* Tamaño de párrafos */
     --logo-anim-duration: 2s; /* Duración de la animación del logo */
     --btn-anim-duration: 1s; /* Duración del titileo del botón */
-    --header-height: 80px; /* Altura del header */
+    --header-height: 111px; /* Altura del header */
     --footer-height: 60px; /* Altura del footer */
 }
 
@@ -54,7 +54,7 @@ body::before {
     width: 100%;
     height: 100%;
     background-color: var(--color-fondo);
-    animation: flashEffect 10s infinite ease-in-out;
+    animation: flashEffect 3s infinite ease-in-out;
     z-index: -2;
 }
 
@@ -99,7 +99,7 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 33px 66px;
     height: 100%;
 }
 
