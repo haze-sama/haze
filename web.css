@@ -240,6 +240,7 @@ body::before {
     justify-content: space-between;
     align-items: center; /* Centrar verticalmente */
     height: calc(100vh - var(--header-height) - var(--footer-height)); /* Ocupar altura disponible */
+    max-height: calc(100vh - var(--header-height) - var(--footer-height));
     overflow: hidden; /* Evitar desbordes */
 }
 
@@ -252,26 +253,26 @@ body::before {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    gap: 20px;
+    gap: 15px;
     height: 100%; /* Respetar altura del contenedor padre */
 }
 
 /* Títulos */
 .section h1 {
     font-size: var(--tamano-titulo);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* Párrafos */
 .section p {
     font-size: var(--tamano-texto);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* Video de YouTube */
 .video {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px; /* Reducido para mejor ajuste */
     aspect-ratio: 16 / 9;
     border: none;
 }
@@ -279,14 +280,14 @@ body::before {
 /* Imagen en Home */
 .mask-image {
     width: auto;
-    max-height: 250px; /* Reducir para evitar superposiciones */
+    max-height: 200px; /* Reducido para evitar superposiciones */
     object-fit: contain;
-    margin-bottom: 30px; /* Espacio para la flecha */
+    margin-bottom: 20px; /* Espacio para la flecha */
 }
 
 /* Eslogan en Home */
 .hustle-text {
-    font-size: 22px;
+    font-size: 18px; /* Reducido para mejor ajuste */
     margin: 10px 0;
 }
 
@@ -303,7 +304,7 @@ body::before {
     opacity: 0.7;
     transition: transform 0.3s, opacity 0.3s;
     animation: flickerOpacity var(--btn-anim-duration) infinite ease-in-out;
-    z-index: 10; /* Asegurar visibilidad sobre footer */
+    z-index: 10; /* Sobre el footer */
 }
 
 .next-section-btn:hover {
@@ -415,28 +416,29 @@ body::before {
     flex: 0 0 100%;
     max-width: 100%;
     background-color: var(--color-secundario);
-    padding: 20px;
+    padding: 15px;
     border-radius: 5px;
     text-align: center;
     scroll-snap-align: center;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-height: 200px; /* Altura mínima para consistencia */
 }
 
 .shelf-item h3 {
-    font-size: clamp(18px, 5vw, 20px);
-    margin-bottom: 10px;
+    font-size: clamp(16px, 4vw, 18px);
+    margin-bottom: 5px;
 }
 
 .shelf-item p {
-    font-size: clamp(14px, 4vw, 16px);
+    font-size: clamp(12px, 3vw, 14px);
     flex-grow: 1; /* Asegurar que el texto sea visible */
 }
 
 .shelf-item .thumbnail {
     width: 100%;
-    max-width: 150px; /* Miniatura pequeña */
+    max-width: 120px; /* Miniatura compacta */
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -459,28 +461,29 @@ body::before {
     flex: 0 0 100%; /* Igual a shelf-item */
     max-width: 100%; /* Igual a shelf-item */
     background-color: var(--color-secundario);
-    padding: 20px; /* Igual a shelf-item */
+    padding: 15px; /* Igual a shelf-item */
     border-radius: 5px; /* Igual a shelf-item */
     text-align: center;
     scroll-snap-align: center;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-height: 200px; /* Igual a shelf-item */
 }
 
 .portfolio-item h3 {
-    font-size: clamp(18px, 5vw, 20px); /* Igual a shelf-item */
-    margin-bottom: 10px;
+    font-size: clamp(16px, 4vw, 18px); /* Igual a shelf-item */
+    margin-bottom: 5px;
 }
 
 .portfolio-item p {
-    font-size: clamp(14px, 4vw, 16px); /* Igual a shelf-item */
+    font-size: clamp(12px, 3vw, 14px); /* Igual a shelf-item */
     flex-grow: 1; /* Asegurar que el texto sea visible */
 }
 
 .portfolio-item .thumbnail {
     width: 100%;
-    max-width: 150px; /* Miniatura pequeña */
+    max-width: 120px; /* Miniatura compacta */
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -645,6 +648,7 @@ body::before {
     align-items: center;
 }
 
+/* Botón de WhatsApp */
 .whatsapp-btn {
     width: 40px;
     height: 40px;
@@ -736,13 +740,14 @@ body::before {
         flex-direction: column;
         height: auto; /* Permitir altura natural */
         align-items: stretch;
+        max-height: none;
     }
 
     .home-left,
     .home-right {
         width: 100%;
         padding: 10px;
-        gap: 15px;
+        gap: 10px;
         height: auto;
     }
 
@@ -758,13 +763,13 @@ body::before {
     }
 
     .mask-image {
-        max-height: 200px;
-        margin-bottom: 20px;
+        max-height: 150px;
+        margin-bottom: 15px;
     }
 
     .hustle-text {
-        font-size: 18px;
-        margin: 10px 0;
+        font-size: 16px;
+        margin: 5px 0;
     }
 
     .next-section-btn {
@@ -780,10 +785,22 @@ body::before {
     .portfolio-item {
         flex: 0 0 100%;
         max-width: 100%;
+        padding: 10px;
+        min-height: 180px;
     }
 
     .thumbnail {
-        max-width: 120px; /* Miniatura más pequeña en móviles */
+        max-width: 100px; /* Miniatura más pequeña */
+    }
+
+    .shelf-item h3,
+    .portfolio-item h3 {
+        font-size: clamp(14px, 3vw, 16px);
+    }
+
+    .shelf-item p,
+    .portfolio-item p {
+        font-size: clamp(12px, 2.5vw, 13px);
     }
 
     .carousel-btn {
