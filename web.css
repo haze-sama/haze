@@ -18,7 +18,7 @@
     --tamano-logo: 90px; /* Logo más grande */
     --tamano-titulo: 24px; /* Tamaño de títulos h1 */
     --tamano-texto: 16px; /* Tamaño de párrafos */
-    --logo-anim-duration: 2,4s; /* Duración de la animación del logo */
+    --logo-anim-duration: 2.4s; /* Duración de la animación del logo */
     --btn-anim-duration: 1s; /* Duración del titileo del botón */
     --header-height: 120px; /* Altura del header */
     --footer-height: 60px; /* Altura del footer */
