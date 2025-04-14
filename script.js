@@ -15,11 +15,11 @@ const portfolioNextBtn = document.querySelector('#portfolio .next-btn');
 const aboutPrevBtn = document.querySelector('#about .prev-section-btn');
 const aboutNextBtn = document.querySelector('#about .next-section-btn');
 const whatsappBtn = document.querySelector('.whatsapp-btn');
-const thumbnails = document.querySelectorAll('.thumbnail');
-const popup = document.getElementById('media-popup');
-const popupImage = document.getElementById('popup-image');
-const popupVideo = document.getElementById('popup-video');
-const closePopup = document.getElementById('close-popup');
+const cardItems = document.querySelectorAll('.shelf-item, .portfolio-item');
+const cardPopup = document.getElementById('card-popup');
+const cardPopupImage = document.getElementById('card-popup-image');
+const cardPopupText = document.getElementById('card-popup-text');
+const cardPopupClose = document.getElementById('card-popup-close');
 
 // Mostrar botón de WhatsApp tras 5 segundos
 if (whatsappBtn) {
@@ -289,38 +289,32 @@ window.addEventListener('load', () => {
     }
 });
 
-// Manejo del popup para thumbnails
-if (thumbnails && popup && popupImage && popupVideo && closePopup) {
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', () => {
-            const fullSrc = thumbnail.getAttribute('data-full');
-            if (fullSrc.endsWith('.mp4') || fullSrc.endsWith('.webm')) {
-                popupVideo.src = fullSrc;
-                popupVideo.style.display = 'block';
-                popupImage.style.display = 'none';
-            } else {
-                popupImage.src = fullSrc;
-                popupImage.style.display = 'block';
-                popupVideo.style.display = 'none';
-                popupVideo.pause();
-            }
-            popup.style.display = 'flex';
+// Manejo del popup para tarjetas
+if (cardItems && cardPopup && cardPopupImage && cardPopupText && cardPopupClose) {
+    cardItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const imageSrc = item.getAttribute('data-image');
+            const textContent = item.getAttribute('data-text');
+            cardPopupImage.src = imageSrc;
+            cardPopupText.textContent = textContent;
+            cardPopup.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Bloquear scroll de fondo
         });
     });
 
-    closePopup.addEventListener('click', () => {
-        popup.style.display = 'none';
-        popupImage.src = '';
-        popupVideo.src = '';
-        popupVideo.pause();
+    cardPopupClose.addEventListener('click', () => {
+        cardPopup.style.display = 'none';
+        cardPopupImage.src = '';
+        cardPopupText.textContent = '';
+        document.body.style.overflow = ''; // Restaurar scroll
     });
 
-    popup.addEventListener('click', (e) => {
-        if (e.target === popup) {
-            popup.style.display = 'none';
-            popupImage.src = '';
-            popupVideo.src = '';
-            popupVideo.pause();
+    cardPopup.addEventListener('click', (e) => {
+        if (e.target === cardPopup) {
+            cardPopup.style.display = 'none';
+            cardPopupImage.src = '';
+            cardPopupText.textContent = '';
+            document.body.style.overflow = ''; // Restaurar scroll
         }
     });
 }
