@@ -30,6 +30,7 @@ body {
     color: var(--color-texto);
     position: relative;
     cursor: auto;
+    overflow-x: hidden; /* Prevenir scroll horizontal */
 }
 
 /* Fondo sprite */
@@ -210,9 +211,9 @@ body::before {
 
 /* Contenedor de secciones */
 .sections-container {
-    margin-top: calc(var(--header-height) * 0.15); /* ~15px para acercar a navbar */
-    margin-bottom: 0; /* Sin margen inferior para llenar hasta footer */
-    min-height: calc(100vh - var(--header-height) - var(--footer-height)); /* Expandir entre navbar y footer */
+    margin-top: calc(var(--header-height) * 0.3); /* ~30px para bajar el contenido */
+    margin-bottom: 0; /* Sin margen inferior */
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
     display: flex;
     width: 500%;
     overflow-x: hidden;
@@ -238,8 +239,9 @@ body::before {
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    margin-bottom: 0; /* Eliminar margen inferior para vista completa */
-    height: calc(100vh - var(--header-height) - var(--footer-height)); /* Ocupar todo el espacio disponible */
+    margin-bottom: calc(var(--footer-height) * -1); /* Negativo para eliminar scroll */
+    max-height: calc(100vh - var(--header-height) - var(--footer-height)); /* Limitar altura */
+    overflow: hidden; /* Evitar desbordes */
 }
 
 /* Contenedores izquierdo y derecho */
@@ -417,6 +419,7 @@ body::before {
     border-radius: 5px;
     text-align: center;
     scroll-snap-align: center;
+    overflow: hidden; /* Evitar desbordes */
 }
 
 .shelf-item h3 {
@@ -440,31 +443,29 @@ body::before {
 }
 
 .portfolio-item {
-    flex: 0 0 100%; /* Igual que shelf-item */
-    max-width: 100%; /* Igual que shelf-item */
+    flex: 0 0 100%; /* Exactamente igual a shelf-item */
+    max-width: 100%; /* Exactamente igual a shelf-item */
     background-color: var(--color-secundario);
-    padding: 20px; /* Igual que shelf-item */
-    border-radius: 5px; /* Igual que shelf-item */
+    padding: 20px; /* Exactamente igual a shelf-item */
+    border-radius: 5px; /* Exactamente igual a shelf-item */
     text-align: center;
     scroll-snap-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    overflow: hidden; /* Evitar desbordes */
 }
 
 .portfolio-item h3 {
-    font-size: clamp(18px, 5vw, 20px); /* Igual que shelf-item */
+    font-size: clamp(18px, 5vw, 20px); /* Igual a shelf-item */
     margin-bottom: 10px;
 }
 
 .portfolio-item p {
-    font-size: clamp(14px, 4vw, 16px); /* Igual que shelf-item */
+    font-size: clamp(14px, 4vw, 16px); /* Igual a shelf-item */
     margin-top: 10px;
 }
 
 .portfolio-media {
     width: 100%;
-    max-width: 250px;
+    max-width: 250px; /* Igual proporción que servicios */
     height: auto;
     aspect-ratio: 1 / 1;
     border-radius: 5px;
@@ -682,8 +683,9 @@ body::before {
     /* Home en móviles */
     .home-section {
         flex-direction: column;
-        height: auto; /* Ajustar altura en móviles */
-        margin-bottom: 0;
+        max-height: none; /* Permitir altura natural en móviles */
+        margin-bottom: 0; /* Sin margen negativo en móviles */
+        overflow: visible; /* Permitir contenido en móviles */
     }
 
     .home-left,
@@ -726,7 +728,7 @@ body::before {
 
     .shelf-item,
     .portfolio-item {
-        flex: 0 0 100%; /* Mantener igual que escritorio */
+        flex: 0 0 100%; /* Igual en móviles */
         max-width: 100%;
     }
 
@@ -739,7 +741,7 @@ body::before {
 
     /* Botones de #about en móviles */
     .section-nav-buttons {
-        bottom: calc(var(--footer-height) + 5px); /* Respetar footer en móviles */
+        bottom: calc(var(--footer-height) + 5px); /* Respetar footer */
         padding: 0 10px;
     }
 
