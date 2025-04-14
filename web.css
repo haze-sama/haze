@@ -15,13 +15,13 @@
     --color-input: #444; /* Gris claro para inputs */
     --color-placeholder: #aaa; /* Gris para placeholders */
     --color-hover: #cc0; /* Amarillo oscuro para hover */
-    --tamano-logo: 70px; /* Logo más grande */
+    --tamano-logo: 50px; /* Logo más grande */
     --tamano-titulo: 24px; /* Tamaño de títulos h1 */
     --tamano-texto: 16px; /* Tamaño de párrafos */
     --logo-anim-duration: 2.4s; /* Duración de la animación del logo */
     --btn-anim-duration: 1s; /* Duración del titileo del botón */
     --header-height: 100px; /* Altura del header */
-    --footer-height: 60px; /* Altura del footer */
+    --footer-height: 20px; /* Altura del footer */
 }
 
 /* Estilos del cuerpo */
