@@ -15,6 +15,11 @@ const portfolioNextBtn = document.querySelector('#portfolio .next-btn');
 const aboutPrevBtn = document.querySelector('#about .prev-section-btn');
 const aboutNextBtn = document.querySelector('#about .next-section-btn');
 const whatsappBtn = document.querySelector('.whatsapp-btn');
+const thumbnails = document.querySelectorAll('.thumbnail');
+const popup = document.getElementById('media-popup');
+const popupImage = document.getElementById('popup-image');
+const popupVideo = document.getElementById('popup-video');
+const closePopup = document.getElementById('close-popup');
 
 // Mostrar botón de WhatsApp tras 5 segundos
 if (whatsappBtn) {
@@ -283,3 +288,39 @@ window.addEventListener('load', () => {
         document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
     }
 });
+
+// Manejo del popup para thumbnails
+if (thumbnails && popup && popupImage && popupVideo && closePopup) {
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+            const fullSrc = thumbnail.getAttribute('data-full');
+            if (fullSrc.endsWith('.mp4') || fullSrc.endsWith('.webm')) {
+                popupVideo.src = fullSrc;
+                popupVideo.style.display = 'block';
+                popupImage.style.display = 'none';
+            } else {
+                popupImage.src = fullSrc;
+                popupImage.style.display = 'block';
+                popupVideo.style.display = 'none';
+                popupVideo.pause();
+            }
+            popup.style.display = 'flex';
+        });
+    });
+
+    closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+        popupImage.src = '';
+        popupVideo.src = '';
+        popupVideo.pause();
+    });
+
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.style.display = 'none';
+            popupImage.src = '';
+            popupVideo.src = '';
+            popupVideo.pause();
+        }
+    });
+}
