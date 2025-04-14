@@ -125,7 +125,6 @@ body::before {
     animation: waveOpacity var(--logo-anim-duration) infinite ease-in-out;
 }
 
-
 /* Retrasos para el efecto de onda */
 .letter-h { animation-delay: 0s; }
 .letter-a1 { animation-delay: 0.2s; }
@@ -211,9 +210,9 @@ body::before {
 
 /* Contenedor de secciones */
 .sections-container {
-    margin-top: calc(var(--header-height) * 0.1); /* Reducir separación */
+    margin-top: calc(var(--header-height) * 0.2); /* ~20px para acercar el texto */
     margin-bottom: var(--footer-height);
-    min-height: calc(100vh - (var(--header-height) * 0.1) - var(--footer-height));
+    min-height: calc(100vh - var(--header-height) - var(--footer-height)); /* Ajustado para viewport */
     display: flex;
     width: 500%;
     overflow-x: hidden;
@@ -247,10 +246,10 @@ body::before {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centrar verticalmente en su propio contenedor */
-    align-items: center; /* Centrar horizontalmente en su propio contenedor */
-    padding: 20px; /* Más espacio */
-    gap: 20px; /* Espaciado entre elementos */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
 }
 
 /* Títulos */
@@ -276,16 +275,16 @@ body::before {
 /* Imagen en Home */
 .mask-image {
     width: auto;
-    height: 100%; /* Usar toda la altura disponible */
-    max-height: 300px; /* Límite para no desbordar */
-    object-fit: contain; /* No recortar */
+    height: 100%;
+    max-height: 300px;
+    object-fit: contain;
     margin-top: 0;
 }
 
 /* Eslogan en Home */
 .hustle-text {
     font-size: 22px;
-    margin: 10px 0; /* Espacio arriba y abajo */
+    margin: 10px 0;
 }
 
 /* Botón para siguiente sección */
@@ -435,17 +434,21 @@ body::before {
     scroll-snap-type: x mandatory;
     gap: 15px;
     padding: 10px 0;
-    visibility: visible; /* Asegurar visibilidad */
+    visibility: visible;
 }
 
 .portfolio-item {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 80%; /* Reducido para evitar deformaciones */
+    max-width: 80%; /* Controlar ancho */
     background-color: var(--color-secundario);
     padding: 20px;
     border-radius: 5px;
     text-align: center;
     scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px; /* Altura mínima para consistencia */
 }
 
 .portfolio-item h3 {
@@ -460,9 +463,11 @@ body::before {
 
 .portfolio-media {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px; /* Reducido para mejor proporción */
+    height: auto; /* Evitar deformación */
     aspect-ratio: 1 / 1;
     border-radius: 5px;
+    object-fit: cover; /* Asegurar que la imagen no se deforme */
 }
 
 /* Barra de progreso */
@@ -492,7 +497,7 @@ body::before {
     transition: left 0.3s ease;
 }
 
-/* Formme Formulario de contacto */
+/* Formulario de contacto */
 .mailbox {
     display: flex;
     flex-direction: column;
@@ -661,7 +666,7 @@ body::before {
 
     /* Secciones en columna para móviles */
     .sections-container {
-        margin-top: var(--header-height);
+        margin-top: var(--header-height); /* Volver al original en móviles */
         margin-bottom: var(--footer-height);
         min-height: calc(100vh - var(--header-height) - var(--footer-height));
         width: 100%;
@@ -718,7 +723,9 @@ body::before {
 
     .shelf-item,
     .portfolio-item {
-        max-width: 100%;
+        flex: 0 0 90%; /* Ajustado para móviles */
+        max-width: 90%;
+        min-height: 250px; /* Altura consistente */
     }
 
     .carousel-btn {
@@ -750,5 +757,11 @@ body::before {
     .whatsapp-btn {
         width: 36px;
         height: 36px;
+    }
+
+    /* Ajuste específico para portafolio en móviles */
+    .portfolio-media {
+        max-width: 200px; /* Reducir para mejor proporción */
+        height: auto;
     }
 }
