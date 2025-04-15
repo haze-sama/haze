@@ -15,6 +15,7 @@ const portfolioNextBtn = document.querySelector('#portfolio .next-btn');
 const aboutPrevBtn = document.querySelector('#about .prev-section-btn');
 const aboutNextBtn = document.querySelector('#about .next-section-btn');
 const whatsappBtn = document.querySelector('.whatsapp-btn');
+const homeReturnBtn = document.querySelector('#home-return-btn');
 const cardItems = document.querySelectorAll('.shelf-item, .portfolio-item');
 const cardPopup = document.getElementById('card-popup');
 const cardPopupImage = document.getElementById('card-popup-image');
@@ -26,6 +27,43 @@ if (whatsappBtn) {
     setTimeout(() => {
         whatsappBtn.classList.add('show');
     }, 5000);
+}
+
+// Mostrar botón de regreso en #contact tras 30 segundos
+let contactTimer;
+function resetContactTimer() {
+    if (homeReturnBtn) {
+        homeReturnBtn.classList.remove('show');
+        clearTimeout(contactTimer);
+        if (document.querySelector('.section.active')?.id === 'contact' || window.location.hash === '#contact') {
+            contactTimer = setTimeout(() => {
+                homeReturnBtn.classList.add('show');
+            }, 30000);
+        }
+    }
+}
+
+// Detectar sección activa
+function updateActiveSection() {
+    const scrollPosition = window.scrollY + 100;
+    document.querySelectorAll('.section').forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const sectionId = section.getAttribute('id');
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            section.classList.add('active');
+            navLinks.forEach(link => link.classList.remove('active'));
+            document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
+            if (sectionId === 'contact') {
+                resetContactTimer();
+            } else {
+                clearTimeout(contactTimer);
+                if (homeReturnBtn) homeReturnBtn.classList.remove('show');
+            }
+        } else {
+            section.classList.remove('active');
+        }
+    });
 }
 
 // Alternar menú hamburguesa
@@ -56,6 +94,9 @@ navLinks.forEach(link => {
         // Actualizar enlace activo
         navLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
+
+        // Manejar botón de regreso
+        resetContactTimer();
     });
 });
 
@@ -74,6 +115,9 @@ if (nextSectionBtn) {
         // Actualizar enlace activo
         navLinks.forEach(l => l.classList.remove('active'));
         document.querySelector('.nav-link[href="#services"]').classList.add('active');
+
+        // Manejar botón de regreso
+        resetContactTimer();
     });
 }
 
@@ -92,6 +136,9 @@ if (aboutPrevBtn) {
         // Actualizar enlace activo
         navLinks.forEach(l => l.classList.remove('active'));
         document.querySelector('.nav-link[href="#services"]').classList.add('active');
+
+        // Manejar botón de regreso
+        resetContactTimer();
     });
 }
 
@@ -109,6 +156,31 @@ if (aboutNextBtn) {
         // Actualizar enlace activo
         navLinks.forEach(l => l.classList.remove('active'));
         document.querySelector('.nav-link[href="#portfolio"]').classList.add('active');
+
+        // Manejar botón de regreso
+        resetContactTimer();
+    });
+}
+
+// Botón de regreso a Home
+if (homeReturnBtn) {
+    homeReturnBtn.addEventListener('click', () => {
+        const homeSection = document.getElementById('home');
+        const sectionIndex = 0;
+
+        if (window.innerWidth > 768) {
+            sectionsContainer.style.transform = `translateX(-${sectionIndex * 20}%)`;
+        } else {
+            homeSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Actualizar enlace activo
+        navLinks.forEach(l => l.classList.remove('active'));
+        document.querySelector('.nav-link[href="#home"]').classList.add('active');
+
+        // Ocultar botón
+        homeReturnBtn.classList.remove('show');
+        clearTimeout(contactTimer);
     });
 }
 
@@ -142,6 +214,9 @@ if (servicesCarousel && servicesPrevBtn && servicesNextBtn && servicesProgressCi
             // Actualizar enlace activo
             navLinks.forEach(l => l.classList.remove('active'));
             document.querySelector('.nav-link[href="#home"]').classList.add('active');
+
+            // Manejar botón de regreso
+            resetContactTimer();
         } else {
             currentIndex--;
             servicesCarousel.scrollTo({
@@ -167,6 +242,9 @@ if (servicesCarousel && servicesPrevBtn && servicesNextBtn && servicesProgressCi
             // Actualizar enlace activo
             navLinks.forEach(l => l.classList.remove('active'));
             document.querySelector('.nav-link[href="#about"]').classList.add('active');
+
+            // Manejar botón de regreso
+            resetContactTimer();
         } else {
             currentIndex++;
             servicesCarousel.scrollTo({
@@ -218,6 +296,9 @@ if (portfolioCarousel && portfolioPrevBtn && portfolioNextBtn && portfolioProgre
             // Actualizar enlace activo
             navLinks.forEach(l => l.classList.remove('active'));
             document.querySelector('.nav-link[href="#about"]').classList.add('active');
+
+            // Manejar botón de regreso
+            resetContactTimer();
         } else {
             currentIndex--;
             portfolioCarousel.scrollTo({
@@ -243,6 +324,9 @@ if (portfolioCarousel && portfolioPrevBtn && portfolioNextBtn && portfolioProgre
             // Actualizar enlace activo
             navLinks.forEach(l => l.classList.remove('active'));
             document.querySelector('.nav-link[href="#contact"]').classList.add('active');
+
+            // Manejar botón de regreso
+            resetContactTimer();
         } else {
             currentIndex++;
             portfolioCarousel.scrollTo({
@@ -264,28 +348,22 @@ if (portfolioCarousel && portfolioPrevBtn && portfolioNextBtn && portfolioProgre
     updateProgress();
 }
 
-// Actualizar enlace activo al hacer scroll en móviles
+// Actualizar sección activa al hacer scroll en móviles
 window.addEventListener('scroll', () => {
     if (window.innerWidth <= 768) {
-        const scrollPosition = window.scrollY + 100;
-        document.querySelectorAll('.section').forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            const sectionId = section.getAttribute('id');
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
-            }
-        });
+        updateActiveSection();
     }
 });
 
-// Establecer enlace activo inicial
+// Actualizar al cargar
 window.addEventListener('load', () => {
     const currentSection = document.querySelector('.section');
     if (currentSection) {
         const sectionId = currentSection.getAttribute('id');
         document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
+        if (sectionId === 'contact') {
+            resetContactTimer();
+        }
     }
 });
 
