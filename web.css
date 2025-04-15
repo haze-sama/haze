@@ -22,6 +22,8 @@
     --btn-anim-duration: 1s; /* Duración del titileo del botón */
     --header-height: 100px; /* Altura del header */
     --footer-height: 50px; /* Altura del footer */
+    --content-margin: 20px; /* Margen interno estándar */
+    --pulse-duration: 2s; /* Duración del latido CTA */
 }
 
 /* Estilos del cuerpo */
@@ -252,7 +254,7 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: var(--content-margin);
     gap: 15px;
     height: 100%; /* Respetar altura del contenedor padre */
 }
@@ -267,6 +269,12 @@ body::before {
 .section p {
     font-size: var(--tamano-texto);
     margin-bottom: 10px;
+    padding: 0 var(--content-margin); /* Margen interno estándar */
+}
+
+/* Sobre Mí con más margen */
+#about p {
+    padding: 0 calc(var(--content-margin) * 1.5); /* 50% más de margen */
 }
 
 /* Video de YouTube */
@@ -275,6 +283,7 @@ body::before {
     max-width: 350px; /* Reducido para mejor ajuste */
     aspect-ratio: 16 / 9;
     border: none;
+    animation: pulseCTA var(--pulse-duration) infinite ease-in-out;
 }
 
 /* Imagen en Home */
@@ -283,6 +292,13 @@ body::before {
     max-height: 200px; /* Reducido para evitar superposiciones */
     object-fit: contain;
     margin-bottom: 20px; /* Espacio para la flecha */
+    animation: pulseCTA var(--pulse-duration) infinite ease-in-out;
+}
+
+/* Animación de latido para CTA */
+@keyframes pulseCTA {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 /* Eslogan en Home */
@@ -434,17 +450,19 @@ body::before {
 .shelf-item p {
     font-size: clamp(12px, 3vw, 14px);
     flex-grow: 1; /* Asegurar que el texto sea visible */
+    padding: 0 var(--content-margin);
 }
 
 .shelf-item .thumbnail {
     width: 100%;
-    max-width: 120px; /* Miniatura compacta */
+    max-width: 150px; /* Más grande para CTA */
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 5px;
     cursor: pointer;
     align-self: center; /* Centrar imagen */
+    animation: pulseCTA var(--pulse-duration) infinite ease-in-out;
 }
 
 /* Carrusel de portafolio */
@@ -480,29 +498,31 @@ body::before {
 .portfolio-item p {
     font-size: clamp(12px, 3vw, 14px); /* Igual a shelf-item */
     flex-grow: 1; /* Asegurar que el texto sea visible */
+    padding: 0 var(--content-margin);
 }
 
 .portfolio-item .thumbnail {
     width: 100%;
-    max-width: 120px; /* Miniatura compacta */
+    max-width: 150px; /* Más grande para CTA */
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 5px;
     cursor: pointer;
     align-self: center; /* Centrar imagen */
+    animation: pulseCTA var(--pulse-duration) infinite ease-in-out;
 }
 
 /* Popup para tarjetas */
 .card-popup {
     display: none;
     position: fixed;
-    top: 0;
+    top: var(--header-height); /* Debajo de navbar */
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100vh - var(--header-height)); /* Hasta el footer */
     background-color: rgba(0, 0, 0, 0.95); /* Fondo muy oscuro */
-    z-index: 2000;
+    z-index: 1500; /* Bajo navbar para ver logo */
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Evitar scroll fuera del popup */
@@ -511,9 +531,9 @@ body::before {
 .card-popup-content {
     background-color: var(--color-secundario);
     border-radius: 10px;
-    max-width: 90%;
-    max-height: 90%;
-    width: 600px; /* Ancho fijo para consistencia */
+    width: calc(100% - 2 * var(--content-margin)); /* Respetar márgenes */
+    max-width: 900px; /* Límite para no saturar */
+    max-height: calc(100% - 2 * var(--content-margin));
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Contener scroll interno */
@@ -521,14 +541,16 @@ body::before {
 
 .card-popup-image {
     width: 100%;
-    max-height: 300px;
+    max-width: 400px; /* Imagen más grande en popup */
+    height: auto;
     object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 5px;
+    align-self: center; /* Centrar */
+    margin: var(--content-margin) 0; /* Padding arriba y abajo */
 }
 
 .card-popup-text {
-    padding: 20px;
+    padding: 0 var(--content-margin) var(--content-margin); /* Margen estándar */
     max-height: 400px; /* Limitar altura del texto */
     overflow-y: auto; /* Scroll solo en texto */
     font-size: clamp(12px, 3vw, 14px);
@@ -600,7 +622,7 @@ body::before {
     width: 100%;
     max-width: 400px;
     background-color: var(--color-secundario);
-    padding: 20px;
+    padding: var(--content-margin);
     border-radius: 5px;
 }
 
@@ -641,6 +663,7 @@ body::before {
     margin-top: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0 var(--content-margin);
 }
 
 .linktree-btn {
@@ -784,7 +807,7 @@ body::before {
     .home-left,
     .home-right {
         width: 100%;
-        padding: 10px;
+        padding: calc(var(--content-margin) / 2);
         gap: 10px;
         height: auto;
     }
@@ -828,7 +851,7 @@ body::before {
     }
 
     .thumbnail {
-        max-width: 100px; /* Miniatura más pequeña */
+        max-width: 120px; /* Más pequeño en móviles */
     }
 
     .shelf-item h3,
@@ -873,18 +896,24 @@ body::before {
     }
 
     /* Popup en móviles */
+    .card-popup {
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+    }
+
     .card-popup-content {
-        width: 90%;
-        max-height: 80%;
+        width: calc(100% - var(--content-margin));
+        max-height: calc(100% - var(--content-margin));
     }
 
     .card-popup-image {
-        max-height: 200px;
+        max-width: 300px;
+        margin: calc(var(--content-margin) / 2) 0;
     }
 
     .card-popup-text {
         max-height: 300px;
-        padding: 15px;
+        padding: 0 calc(var(--content-margin) / 2) calc(var(--content-margin) / 2);
     }
 
     .card-popup-close {
