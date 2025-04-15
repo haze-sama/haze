@@ -18,12 +18,13 @@
     --tamano-logo: 40px; /* Logo más grande */
     --tamano-titulo: 21px; /* Tamaño de títulos h1 */
     --tamano-texto: 14px; /* Tamaño de párrafos */
-    --logo-anim-duration: 2.4s; /* Duración de la animación del logo */
-    --btn-anim-duration: 1s; /* Duración del titileo del botón */
+    --logo-anim-duration: 6s; /* Logo más lento */
+    --btn-anim-duration: 4s; /* Botón más lento */
     --header-height: 100px; /* Altura del header */
     --footer-height: 50px; /* Altura del footer */
     --content-margin: 20px; /* Margen interno estándar */
-    --pulse-duration: 2s; /* Duración del latido CTA */
+    --pulse-duration: 5s; /* Latido CTA más lento */
+    --popup-anim-duration: 8s; /* Animación popup lenta */
 }
 
 /* Estilos del cuerpo */
@@ -47,6 +48,7 @@ body::before {
     background-size: cover;
     opacity: 0.3;
     z-index: -3;
+    animation: subtleGlow 12s infinite ease-in-out; /* Más lento */
 }
 
 /* Efecto de brillo (flash) */
@@ -57,7 +59,7 @@ body::before {
     width: 100%;
     height: 100%;
     background-color: var(--color-fondo);
-    animation: flashEffect 4s infinite ease-in-out;
+    animation: flashEffect 10s infinite ease-in-out; /* Más lento */
     z-index: -2;
 }
 
@@ -77,7 +79,7 @@ body::before {
     background-image: url('./texture-lines.png');
     background-size: 200%;
     opacity: 0.2;
-    animation: energyFlow 10s linear infinite;
+    animation: energyFlow 20s linear infinite; /* Más lento */
     pointer-events: none;
     z-index: -1;
 }
@@ -85,6 +87,12 @@ body::before {
 @keyframes energyFlow {
     0% { background-position: 0 0; }
     100% { background-position: 200% 0; }
+}
+
+/* Animación sutil para fondo */
+@keyframes subtleGlow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.35; }
 }
 
 /* Header fijo */
@@ -130,19 +138,19 @@ body::before {
 
 /* Retrasos para el efecto de onda */
 .letter-h { animation-delay: 0s; }
-.letter-a1 { animation-delay: 0.2s; }
-.letter-z { animation-delay: 0.4s; }
-.letter-e { animation-delay: 0.6s; }
-.letter-dash { animation-delay: 0.8s; }
-.letter-s { animation-delay: 1s; }
-.letter-a2 { animation-delay: 1.2s; }
-.letter-m { animation-delay: 1.4s; }
-.letter-a3 { animation-delay: 1.6s; }
+.letter-a1 { animation-delay: 0.5s; }
+.letter-z { animation-delay: 1s; }
+.letter-e { animation-delay: 1.5s; }
+.letter-dash { animation-delay: 2s; }
+.letter-s { animation-delay: 2.5s; }
+.letter-a2 { animation-delay: 3s; }
+.letter-m { animation-delay: 3.5s; }
+.letter-a3 { animation-delay: 4s; }
 
-/* Animación de opacidad más notable */
+/* Animación de opacidad más lenta y sutil */
 @keyframes waveOpacity {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
 }
 
 /* Menú hamburguesa */
@@ -295,10 +303,10 @@ body::before {
     animation: pulseCTA var(--pulse-duration) infinite ease-in-out;
 }
 
-/* Animación de latido para CTA */
+/* Animación de latido para CTA, más sutil */
 @keyframes pulseCTA {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    50% { transform: scale(1.05); } /* Menos notable */
 }
 
 /* Eslogan en Home */
@@ -333,10 +341,10 @@ body::before {
     height: 24px;
 }
 
-/* Animación de titileo para el botón */
+/* Animación de titileo más lenta */
 @keyframes flickerOpacity {
     0%, 100% { opacity: 0.7; }
-    50% { opacity: 0.9; }
+    50% { opacity: 0.85; }
 }
 
 /* Botones de navegación en #about */
@@ -532,29 +540,35 @@ body::before {
     background-color: var(--color-secundario);
     border-radius: 10px;
     width: calc(100% - 2 * var(--content-margin)); /* Respetar márgenes */
-    max-width: 900px; /* Límite para no saturar */
+    max-width: 1000px; /* Más amplio */
     max-height: calc(100% - 2 * var(--content-margin));
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centrar todo */
+    padding: var(--content-margin);
     overflow: hidden; /* Contener scroll interno */
+    animation: pulsePopup var(--popup-anim-duration) infinite ease-in-out;
 }
 
 .card-popup-image {
     width: 100%;
-    max-width: 400px; /* Imagen más grande en popup */
+    max-width: 400px; /* Imagen más grande */
     height: auto;
     object-fit: cover;
     border-radius: 5px;
-    align-self: center; /* Centrar */
-    margin: var(--content-margin) 0; /* Padding arriba y abajo */
+    margin: var(--content-margin) auto; /* Centrar con márgenes */
+    display: block;
 }
 
 .card-popup-text {
-    padding: 0 var(--content-margin) var(--content-margin); /* Margen estándar */
+    width: 100%;
+    max-width: 800px; /* Alinear con contenedor */
+    padding: var(--content-margin);
     max-height: 400px; /* Limitar altura del texto */
     overflow-y: auto; /* Scroll solo en texto */
     font-size: clamp(12px, 3vw, 14px);
     color: var(--color-texto);
+    text-align: justify; /* Justificar texto */
     scrollbar-width: thin;
     scrollbar-color: var(--color-acento) var(--color-input);
 }
@@ -585,6 +599,12 @@ body::before {
 
 .card-popup-close:hover {
     transform: scale(1.2);
+}
+
+/* Animación sutil para popup */
+@keyframes pulsePopup {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); } /* Muy leve */
 }
 
 /* Barra de progreso */
@@ -700,10 +720,38 @@ body::before {
     text-align: center;
 }
 
+/* Botón de regreso a Home */
+.home-return-btn {
+    position: absolute;
+    left: 10px;
+    background-color: var(--color-acento);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1100;
+}
+
+.home-return-btn.show {
+    opacity: 0.7;
+}
+
+.home-return-btn:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.home-return-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
 /* Contenedor de WhatsApp */
 .whatsapp-container {
     position: absolute;
-    left: 10px;
+    left: 60px; /* Espacio para home-return-btn */
     height: 100%;
     display: flex;
     align-items: center;
@@ -726,7 +774,7 @@ body::before {
 
 .whatsapp-btn.show {
     opacity: 1;
-    animation: vibrateAndRotate 2s infinite ease-in-out, scalePulse 1.5s infinite ease-in-out;
+    animation: vibrateAndRotate 4s infinite ease-in-out; /* Más lento */
 }
 
 @keyframes vibrateAndRotate {
@@ -734,11 +782,6 @@ body::before {
     25% { transform: rotate(5deg) translate(2px, -2px); }
     50% { transform: rotate(0deg) translate(-2px, 2px); }
     75% { transform: rotate(-5deg) translate(2px, 2px); }
-}
-
-@keyframes scalePulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
 }
 
 /* Responsividad */
@@ -885,8 +928,12 @@ body::before {
         flex-direction: column;
     }
 
-    /* WhatsApp en móviles */
+    /* WhatsApp y botón Home en móviles */
     .whatsapp-container {
+        left: 50px; /* Espacio para home-return-btn */
+    }
+
+    .home-return-btn {
         left: 8px;
     }
 
@@ -904,16 +951,17 @@ body::before {
     .card-popup-content {
         width: calc(100% - var(--content-margin));
         max-height: calc(100% - var(--content-margin));
+        padding: calc(var(--content-margin) / 2);
     }
 
     .card-popup-image {
         max-width: 300px;
-        margin: calc(var(--content-margin) / 2) 0;
+        margin: calc(var(--content-margin) / 2) auto;
     }
 
     .card-popup-text {
         max-height: 300px;
-        padding: 0 calc(var(--content-margin) / 2) calc(var(--content-margin) / 2);
+        padding: calc(var(--content-margin) / 2);
     }
 
     .card-popup-close {
