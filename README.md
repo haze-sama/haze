@@ -2,6 +2,8 @@
 
 Bienvenido a **HAZE**, mi espacio digital personal. Este proyecto es un "nido digital", un lugar que simula mi portafolio en un entorno virtual. Aquí comparto mis creaciones, ofrezco detalles de mis servicios y algunos pensamientos, todo bajo mi marca personal: **HAZE**.
 
+URL: https://haze-sama.github.io/haze/
+
 ## Sobre el Proyecto
 
 Este sitio web está diseñado para ser un espacio simple y creativo donde los visitantes pueden explorar mi trabajo de manera orgánica. Inspirado en un diseño minimalista con tonos oscuros, el sitio incluye:
